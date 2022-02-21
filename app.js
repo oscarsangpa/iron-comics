@@ -10,12 +10,26 @@ require('./config/db.config')
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs')
-require('./config/hbs.config')
+app.set('view engine', 'hbs');
+require('./config/hbs.config');
 
 
 const router = require('./config/routes.config')
 app.use('/', router);
+
+app.use((req, res, next) => {
+  
+  res.status(404).render("errors/not-found");
+});
+
+app.use((err, req, res, next) => {
+  
+  console.error("ERROR", req.method, req.path, err);
+
+  if (!res.headersSent) {
+    res.status(500).render("errors/error");
+  }
+});
 
 
 const port = Number(process.env.PORT || 3000);
