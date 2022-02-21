@@ -1,0 +1,29 @@
+{
+  "name": "iron-comics",
+  "version": "1.0.0",
+  "description": "website to keep track of your read comics",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.3",
+    "http-errors": "^2.0.0",
+    "mongoose": "^6.2.2",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -e hbs,js,css app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oscarsangpa/iron-comics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oscarsangpa/iron-comics/issues"
+  },
+  "homepage": "https://github.com/oscarsangpa/iron-comics#readme"
+}
