@@ -13,3 +13,9 @@ module.exports.doLogin = (req, res, next) => {
   res.render('auth/login')
 }
 
+module.exports.logout = (req, res, next) => {
+  req.logout();
+  res.redirect('/login');
+}
+
+
