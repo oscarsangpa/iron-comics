@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../controllers/auth.controller');
 const user = require('../controllers/user.controller');
+const marvelComics = require('../controllers/comic.controller');
 
 
 
@@ -17,6 +18,9 @@ router.post('/login', auth.doLogin);
 
 /* User routes */
 router.get('/profile', user.profile);
+
+/* Marvel Comics routes */
+router.get('/list-comics', marvelComics.list);
 
 
 
