@@ -1,7 +1,7 @@
-const axios = require('axios');
+// const axios = require('axios');
 
-const httpClient = axios.create({
-  baseURL: 'https://gateway.marvel.com/'
-})
+// const httpClient = axios.create({
+//   baseURL: 'https://gateway.marvel.com/'
+// })
 
-module.exports = httpClient
+// module.exports = httpClient
