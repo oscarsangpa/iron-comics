@@ -4,6 +4,7 @@
   "description": "website to keep track of your read comics",
   "main": "app.js",
   "dependencies": {
+    "axios": "^0.26.0",
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
