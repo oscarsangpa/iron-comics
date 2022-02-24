@@ -4,6 +4,7 @@ const createError = require('http-errors');
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
+const passport = require('passport');
 
 require('./config/db.config')
 
@@ -17,6 +18,11 @@ app.use(logger('dev'))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 require('./config/hbs.config');
+
+require('./config/passport.config');
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 const router = require('./config/routes.config')

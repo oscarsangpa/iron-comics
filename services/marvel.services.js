@@ -1,9 +1,9 @@
-const httpClient = require('./axios.services');
+// const httpClient = require('./axios.services');
 
-const getComicsMarvel = () => httpClient.get('//v1/public/comics');
+// const getComicsMarvel = () => httpClient.get('//v1/public/comics');
 
 
-module.exports = getComicsMarvel;
+// module.exports = getComicsMarvel;
 
 
 
