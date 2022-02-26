@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 const auth = require('../controllers/auth.controller');
 const user = require('../controllers/user.controller');
+const authMiddleware = require('../middlewares/auth.middleware');
 // const marvelComics = require('../controllers/comic.controller');
 
 const SCOPES = [
@@ -28,7 +30,7 @@ router.get('/logout', auth.logout);
 
 
 /* User routes */
-router.get('/profile', user.profile);
+router.get('/profile', authMiddleware.isAuthenticated, user.profile);
 
 /* Marvel Comics routes */
 // router.get('/list-comics', marvelComics.list);
