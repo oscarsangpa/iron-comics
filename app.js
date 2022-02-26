@@ -8,11 +8,15 @@ const passport = require('passport');
 
 require('./config/db.config')
 
+const sessionConfig = require('./config/session.config');
+
 const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(logger('dev'))
+app.use(logger('dev'));
+
+app.use(sessionConfig);
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -25,7 +29,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-const router = require('./config/routes.config')
+const router = require('./config/routes.config');
+const sessionConfig = require('./config/session.config');
 app.use('/', router);
 
 app.use((req, res, next) => {
