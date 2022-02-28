@@ -1,5 +1,38 @@
 body {
-    background-color: blue;
+    background-color: #518caa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Centrar letras bocadillo*/
+.centrar-letras {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bocadillo-redondo {
+  margin-top: 300px;
+  position: relative;
+  height: 300px;
+  width: 600px;
+  background: white;
+  border-radius: 50%;
+  /* box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.5); */
+}
+.bocadillo-redondo:before {
+  border: 25px solid white;
+  content: '';
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  bottom: -5px;
+  right: 75px;
+  transform: rotate(-12deg);
 }
 
 .container-form {
