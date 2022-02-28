@@ -1,4 +1,4 @@
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 // const marvel = require ('../services/marvel.services')
 
 
@@ -12,3 +12,11 @@
 //     next(err)
 //   })
 // }
+
+module.exports.list = (req, res, next) => {
+  res.render('comics/list-comics');
+}
+
+module.exports.detail = (req, res, next) => {
+  res.render('comics/detail-comic');
+}
