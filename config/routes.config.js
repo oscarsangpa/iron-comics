@@ -5,6 +5,7 @@ const auth = require('../controllers/auth.controller');
 const user = require('../controllers/user.controller');
 const authMiddleware = require('../middlewares/auth.middleware');
 // const marvelComics = require('../controllers/comic.controller');
+const comics = require('../controllers/comic.controller');
 
 const SCOPES = [
   "https://www.googleapis.com/auth/userinfo.profile",
@@ -34,6 +35,10 @@ router.get('/profile', authMiddleware.isAuthenticated, user.profile);
 
 /* Marvel Comics routes */
 // router.get('/list-comics', marvelComics.list);
+
+router.get('/list-comics', /*authMiddleware.isAuthenticated*/ comics.list);
+router.get('/detail-comic', comics.detail);
+
 
 
 
