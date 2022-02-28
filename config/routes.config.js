@@ -18,13 +18,13 @@ router.get('/', (req, res, next) => {
 })
 
 /** Auth routes */
-router.get('/login', auth.login);
 router.get('/register', auth.register);
+router.get('/login', auth.login);
 router.post('/register', auth.doRegister);
 router.get('/activate/:token', auth.activate);
 router.post('/login', auth.doLogin);
 router.get('/login/google', passport.authenticate('google-auth', { scope: SCOPES  } ));
-router.get('/auth/google/callback', auth.doLoginGoogle);
+router.get('/auth/google/callback', auth.loginGoogle);
 router.get('/logout', auth.logout);
 
 

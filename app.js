@@ -30,7 +30,6 @@ app.use(passport.session());
 
 
 const router = require('./config/routes.config');
-const sessionConfig = require('./config/session.config');
 app.use('/', router);
 
 app.use((req, res, next) => {
