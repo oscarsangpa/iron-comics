@@ -6,7 +6,6 @@ const user = require('../controllers/user.controller');
 const authMiddleware = require('../middlewares/auth.middleware');
 // const marvelComics = require('../controllers/comic.controller');
 
-
 const SCOPES = [
   "https://www.googleapis.com/auth/userinfo.profile",
   "https://www.googleapis.com/auth/userinfo.email"
@@ -39,3 +38,4 @@ router.get('/profile', authMiddleware.isAuthenticated, user.profile);
 
 
 module.exports = router;
+
