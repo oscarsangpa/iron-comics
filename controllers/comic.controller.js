@@ -1,21 +1,24 @@
 const mongoose = require('mongoose');
-// const marvel = require ('../services/marvel.services')
+const Comic = require('../models/comic.model');
 
-
-// module.exports.list = (req, res, next) => {
-//   marvel.getComicsMarvel()
-//   .then(response => {
-//     console.log(response)
-//     res.render('list-comics', { comic: response.data })
-//   })
-//   .catch(err => {
-//     next(err)
-//   })
-// }
+const marvelAPI = require('marvel-api');
+ 
+const marvel = marvelAPI.createClient({
+  publicKey: process.env.MV_PUBLIC_KEY,
+  privateKey: process.env.MV_PRIVATE_KEY
+});
 
 module.exports.list = (req, res, next) => {
-  res.render('comics/list-comics');
+  marvel.comics.findAll(40)
+  .then((comics) => {
+    console.log(comics.data)
+    res.render('comics/list-comics', { comics:comics.data, Comic });
+  })
+  .fail(err => next(err))
+  .done();
 }
+
+
 
 module.exports.detail = (req, res, next) => {
   res.render('comics/detail-comic');
