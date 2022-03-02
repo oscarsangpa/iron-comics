@@ -6,23 +6,39 @@ body {
     justify-content: center;
 }
 
-/* Centrar letras bocadillo*/
-.centrar-letras {
-  margin-top: 40px;
+colores {
+  background-color: #e23636;
+  background-color: #000000;
+  background-color: #504a4a;
+  background-color: #f78f3f;
+}
+
+/* Centrar contenido bocadillo*/
+.centrar {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
+/* Centrar "Submit" y "Register here" */
+#arrejuntar {
+  
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+/* Bocadillo */
 .bocadillo-redondo {
   margin-top: 300px;
   position: relative;
-  height: 300px;
-  width: 600px;
+  height: 325px;
+  width: 650px;
   background: white;
   border-radius: 50%;
-  /* box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.5); */
+  box-shadow: 1px 12px 33px  #f78f3f;
 }
+
 .bocadillo-redondo:before {
   border: 25px solid white;
   content: '';
@@ -32,11 +48,42 @@ body {
   position: absolute;
   bottom: -5px;
   right: 75px;
-  transform: rotate(-12deg);
+  transform: rotate(-22deg);
+}
+
+.bocadillo-redondo-register {
+  margin-top: 300px;
+  position: relative;
+  height: 375px;
+  width: 650px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 1px 12px 33px  #f78f3f;
+}
+
+.bocadillo-redondo-register:before {
+  border: 25px solid white;
+  content: '';
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  bottom: 5px;
+  right: 75px;
+  transform: rotate(-22deg);
+}
+
+#button-color-red{
+  background-color: #e23636;
+  border-bottom: #504a4a;
 }
 
 .container-form {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#color-text {
+  text-decoration-color: #504a4a;
 }
