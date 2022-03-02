@@ -1,2 +1,18 @@
 
 <h2>List comics</h2>
+
+
+{{#each comics as |comic|}}
+  <ul>
+    <li>
+      {{comic.title}}
+    </li>
+
+    {{!-- <li>{{comic.description}}</li> --}}
+  </ul>
+
+  {{!-- //if comic.images.lentg -> img src= comic.images.0.value
+  //else if comic.thumbnails.length --}}
+    <img src="{{comic.thumbnail.path}}/portrait_medium.jpg" alt="img-comic"/>
+
+{{/each}}
