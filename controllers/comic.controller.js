@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Comic = require('../models/comic.model');
 
 const marvelAPI = require('marvel-api');
  
@@ -12,7 +11,7 @@ module.exports.list = (req, res, next) => {
   marvel.comics.findAll(40)
   .then((comics) => {
     console.log(comics.data)
-    res.render('comics/list-comics', { comics:comics.data, Comic });
+    res.render('comics/list-comics', { comics:comics.data });
   })
   .fail(err => next(err))
   .done();
