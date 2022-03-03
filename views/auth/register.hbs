@@ -1,37 +1,42 @@
-<h2 class="container-form"> Register</h2>
 
-<div class="bocadillo-redondo-register">
-  <div id="login">
-    <div class="container">
-       <div id="login-row" class="row justify-content-center align-items-center">
-         <div id="login-column" class="col-md-6">
-           <div id="login-box" class="col-md-12">
-             <form id="login-form" class="form" action="" method="post">
-                <br>
-                <h3 class="text-center #color-text">New user</h3>
-                <br>
-                <form action="/register" method="post" class="form-group">
-                    <label for="username" class="#color-text">Username:</label><br>
-                    <input type="text" name="username" id="username" class="form-control">
-                </form>
-                <form method="post" class="form-group">
-                    <label class="#color-text">Email:</label><br>
-                    <input type="text" name="email" class="form-control" placeholder="user@example.com">
-                </form>
-                <form method="post" class="form-group">
-                    <label class="#color-text">Password:</label><br>
-                    <input type="password" name="password" class="form-control">
-                </form>
-                <br>
-                <div class="form-group centrar" id="arrejuntar">
-                    <input type="submit" class="btn btn-info btn-md" id="button-color-red" value="Register">
-                </div>
-             </form>
-           </div>
-         </div>
-       </div>
+<body>
+  <div>
+    <img src="image/logoIronComic_final copia.png" class="logo-inicio_register"/>
+  </div>
+  <div class="bocadillo-redondo-register">
+    <div id="login">
+      <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+          <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+              <form id="login-form" class="form" action="" method="post">
+                  <br>
+                  <h3 class="text-center #color-text">Register</h3>
+                  <br>
+                  <form action="/register" method="post" class="form-group">
+                      <label for="username" class="#color-text">Username:</label><br>
+                      <input type="text" name="username" id="username" class="form-control">
+                  </form>
+                  <form method="post" class="form-group">
+                      <label class="#color-text">Email:</label><br>
+                      <input type="text" name="email" class="form-control" placeholder="user@example.com">
+                  </form>
+                  <form method="post" class="form-group">
+                      <label class="#color-text">Password:</label><br>
+                      <input type="password" name="password" class="form-control">
+                  </form>
+                  <br>
+                  <div class="form-group centrar" id="arrejuntar">
+                      <input type="submit" class="btn btn-info btn-md" id="button-color-red" value="Register">
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</body>
 
 
   {{!-- <form action="/register" method="post">
@@ -50,7 +55,3 @@
     {{!-- <div class="container-form">
       <button type="submit">Register</button>
     </div> --}}
-
-
-  </form>
-</div>
