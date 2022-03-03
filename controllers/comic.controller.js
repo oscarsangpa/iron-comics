@@ -8,7 +8,7 @@ const marvel = marvelAPI.createClient({
 });
 
 module.exports.list = (req, res, next) => {
-  marvel.comics.findAll(40)
+  marvel.comics.findAll(16)
   .then((comics) => {
     console.log(comics.data)
     res.render('comics/list-comics', { comics:comics.data });
@@ -20,5 +20,12 @@ module.exports.list = (req, res, next) => {
 
 
 module.exports.detail = (req, res, next) => {
-  res.render('comics/detail-comic');
+  comicId = `${data.id}`;
+
+  marvel.comics.find(comicId)
+  .then((comicId) => {
+    res.render('comics/detail-comic', { comicId: comicId.data});
+  })
+  .fail(err => next(err))
+  .done();
 }
