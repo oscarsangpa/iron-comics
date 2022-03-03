@@ -1,3 +1,5 @@
+// const comics = require('./axios.services');
+
 const httpClient = require('./axios.services');
 
 const getComics = () => httpClient.get('/list-comics');
