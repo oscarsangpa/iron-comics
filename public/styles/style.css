@@ -87,3 +87,7 @@ colores {
 #color-text {
   text-decoration-color: #504a4a;
 }
+
+.img-width {
+  width: 250px;
+}
