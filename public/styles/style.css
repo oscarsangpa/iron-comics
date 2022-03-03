@@ -1,4 +1,8 @@
 body {
+
+  font-family: 'Karla', sans-serif;
+}
+body {
     background-color: #518caa;
     display: flex;
     flex-direction: column;
