@@ -1,5 +1,7 @@
 const error = require('http-errors');
 const axios = require('axios');
+const md5 = require('blueimp-md5');
+
 
 // const getTheComics = async() => {
 //   try {
@@ -20,13 +22,14 @@ const axios = require('axios');
 //   })
 //   .catch(error)
 
-
-const MASTER_KEY = 'ts=1&apikey=5b3db6e8179d8f881f55b881ee3f5c15&hash=1a25a5c80e371c28e1ecc5f4e78f84e8'
+let hash = md5("1", "1094031a72cf34e5e64d9889c73b8dfbbe9e3c5b5b3db6e8179d8f881f55b881ee3f5c15");
+console.log(hash);
+const APY_KEY = 'ts=1&apikey=5b3db6e8179d8f881f55b881ee3f5c15&hash=23fa5061eb064ee6aea129017d62c9eb'
 // 23FA5061EB064EE6AEA129017D62C9EB
 // 23fa5061eb064ee6aea129017d62c9eb
 const httpClient = axios.create({
   baseURL: 
-  `https://gateway.marvel.com:443/v1/public/comics?${MASTER_KEY}`
+  `https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=5b3db6e8179d8f881f55b881ee3f5c15&hash=${hash}`
 })
 
 module.exports = httpClient;
