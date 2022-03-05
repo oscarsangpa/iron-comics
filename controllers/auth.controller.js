@@ -15,7 +15,7 @@ module.exports.doRegister = (req, res, next) => {
     res.render('auth/register', { errors, user });
   }
 
-//falta añadir foto
+
   User.findOne({ email: user.email })
     .then((userFound) => {
       if(userFound) {
