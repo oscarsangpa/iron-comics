@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
 const marvelAPI = require('marvel-api');
+
+const notImage ="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
  
 const marvel = marvelAPI.createClient({
   publicKey: process.env.MV_PUBLIC_KEY,

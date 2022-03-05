@@ -1,27 +1,16 @@
-<div class="container">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="/">IronComics</a>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/list-comics">Comics</a>
-        </li>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-        <li class="nav-item">
-          <a class="nav-link active btn btn-outline-success" href="/profile">Perfil</a>
-        </li>
-      </ul>
-    </div>
+{{!-- <h1> navbar </h1> --}}
+{{!-- {{#if current.user}} --}}
+<nav>
+  <!-- <img class="logo_nav" src="/iron-comics/public/image/logoIronComic_final copia.png"/> -->
+  <img class="logo_nav" src="image/logoIronComic_final_hexagono copia.png"/>
+  
+  <div>
+      <img src="image/usuarioSinFotoPerfil.png"/> 
+      <div>
+        <button>Explorar</button>
+        <button>NICK DEL USUARIO</button>
+        <!-- La idea es clicar en el nick para que te lleve a tu perfil  -->
+      </div>  
   </div>
 </nav>
-</div>
+{{!-- {{/if}} --}}

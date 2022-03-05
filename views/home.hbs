@@ -1,8 +1,11 @@
 
-<h1 id="color-text"> WELCOME TO IRON-COMICS! </h1>
-<h2> Welcome to iron-comics! </h2>
+{{!-- <h1 id="color-text"> WELCOME TO IRON-COMICS! </h1>
+<h2> Welcome to iron-comics! </h2> --}}
 
-<a href="/login">LOGIN</a>
+{{!-- <a href="/login">LOGIN</a>
+
+{{!-- <a href="/login">LOGIN</a> --}}
+
 </br>
 <a href="/register">REGISTER</a>
 </br>
@@ -10,9 +13,14 @@
 </br>
 <a href="/list-comics">LIST COMICS</a>
 </br>
-<a href="/detail-comic">DETAIL COMIC</a>
+<a href="/detail-comic">DETAIL COMIC</a> --}}
 
 <body>
+    <div>
+        {{!-- <img src="image/logoIronComic_final copia.png" class="logo-login_register"/> --}}
+        {{!-- <img src="/image/logoIronComic_final_hexagono copia.png" class="logo-login_register"/> --}}
+        <img src="/image/logoIronComic_final_sinHexagono_letrasNaranjas copia.png" class="logo-login_register"/>
+    </div>
     <div class="bocadillo-redondo">
         {{!-- <a href="/login" class="centrar-letras">LOGIN</a> --}}
         <div id="login">
@@ -41,6 +49,8 @@
                                     <br>
                                     <div id="register-link" class="text-right">
                                         <a href="/register" id="color-text">Register here</a>
+                                        <a href="/login/google" class="text-info">Login Google</a>
+
                                     </div>
                                 </div>
                             </form>
