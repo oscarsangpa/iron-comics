@@ -37,7 +37,7 @@ router.get('/profile', authMiddleware.isAuthenticated, user.profile);
 //router.get('/list-comics', marvelComics.list);
 
 router.get('/list-comics', /*authMiddleware.isAuthenticated*/ comics.list);
-router.get('/detail-comic/:id', comics.detail);
+router.get('/detail-comic/:id',/*authMiddleware.isAuthenticated*/ comics.detail);
 
 
 
