@@ -27,7 +27,7 @@ module.exports.detail = (req, res, next) => {
   marvel.comics.find(req.params.id)
   .then((comic) => {
     console.log(comic.data)
-    res.render('comics/detail-comic', { comic: comic.data });
+    res.render('comics/detail-comic', { comic: comic.data[0] });
   })
   .fail(err => next(err))
   .done();

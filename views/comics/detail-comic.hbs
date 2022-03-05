@@ -1,17 +1,3 @@
-<nav>
-  <!-- <img class="logo_nav" src="/iron-comics/public/image/logoIronComic_final copia.png"/> -->
-  <img class="logo_nav" src="/iron-comics/public/image/logoIronComic_final_hexagono copia.png"/>
-  
-  <div>
-      <img src="/iron-comics/public/image/usuarioSinFotoPerfil.png"/> 
-      <div>
-        <button>Explorar</button>
-        <button>NICK DEL USUARIO</button>
-        <!-- La idea es clicar en el nick para que te lleve a tu perfil  -->
-      </div>  
-  </div>
-</nav>
-
 <body>
     <div>
         {{!-- IMAGEN DEL CÓMIC --}}
@@ -37,8 +23,26 @@
 <h2>Detail comics </h2>
 
 
- <h3>{{comic.id}}</h3>
+ {{!-- <h3>{{comic.id}}</h3>
  <p>{{comic.title}}</p>
- <p>hola</p>
-<h1>NO SE PINTAN LOS PUTOS DETALLES ME VOY A CAGAR EN DIOS</h1>
+ <img class="img-thumbnail" 
+      src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}"/> --}}
+
+ {{!-- <p>hola</p> --}}
+
+ <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{comic.title}}</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
