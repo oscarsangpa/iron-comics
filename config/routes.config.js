@@ -41,6 +41,5 @@ router.get('/detail-comic/:id', comics.detail);
 
 
 
-
 module.exports = router;
 

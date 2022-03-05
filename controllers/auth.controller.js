@@ -48,6 +48,7 @@ module.exports.activate = (req, res, next) => {
     { active: true}
     )
     .then(() => {
+      req.flash('flashMessage', 'You have activated your account. Welcome!');
       res.redirect('/login')
     })
     .catch(err => next(err))
@@ -88,5 +89,7 @@ module.exports.logout = (req, res, next) => {
   req.logout();
   res.redirect('/login');
 }
+
+
 
 

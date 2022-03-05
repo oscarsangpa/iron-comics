@@ -25,6 +25,7 @@ const UserSchema = new mongoose.Schema({
   },
   image: {
     type: String,
+    defult: "https://res.cloudinary.com/dyevght88/image/upload/v1646469925/ironcomics/avatar-user/avatar-default_s5ic41.png"
   },
   active: {
     type: Boolean,
