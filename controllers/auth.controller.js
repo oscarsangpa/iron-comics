@@ -48,7 +48,7 @@ module.exports.activate = (req, res, next) => {
     { active: true}
     )
     .then(() => {
-      res.redirect('/login')
+      res.redirect('/')
     })
     .catch(err => next(err))
 }
