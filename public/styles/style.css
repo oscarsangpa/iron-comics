@@ -111,6 +111,7 @@ colores {
   justify-content: center;
 }
 
+
 /* Logo */
 
 .logo-login_register {
@@ -164,4 +165,11 @@ nav > div > button {
 
 .underNav {
   margin-top: 100px;
+}
+#color-text {
+  text-decoration-color: #504a4a;
+}
+
+.img-width {
+  width: 250px;
 }

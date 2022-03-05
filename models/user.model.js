@@ -23,6 +23,9 @@ const UserSchema = new mongoose.Schema({
     required: 'password is required',
     match: [PASSWORD_PATTERN, 'password needs between 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character'],
   },
+  image: {
+    type: String,
+  },
   active: {
     type: Boolean,
     default: false
