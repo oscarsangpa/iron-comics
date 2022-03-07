@@ -1,10 +1,10 @@
-// const comics = require('./axios.services');
-
 const httpClient = require('./axios.services');
 
-const getComics = () => httpClient.get('/list-comics');
+const getComics = () => httpClient.get();
 
-const getComicId = (comicId) => httpClient.get(`/detail-comic/${comicId}`);
+const getComicDetail = () => httpClient.get()
+
+const getComicId = (comicId) => httpClient.get(`/${comicId}`);
 
 // const createBootcamp = (data) => httpClient.post('/bootcamps', data)
 
@@ -13,7 +13,5 @@ const getComicId = (comicId) => httpClient.get(`/detail-comic/${comicId}`);
 
 module.exports = {
   getComics,
-  getComicId,
-  // createBootcamp,
-  // deleteBootcamp
+  getComicId
 }
