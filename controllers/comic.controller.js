@@ -26,9 +26,25 @@ module.exports.detail = (req, res, next) => {
 
   marvel.comics.find(req.params.id)
   .then((comic) => {
-    console.log(comic.data)
+    // console.log(comic.data)
     res.render('comics/detail-comic', { comic: comic.data[0] });
   })
   .fail(err => next(err))
   .done();
+}
+
+module.exports.byCharacter = (req, res, next) => {
+  marvel.characters.findByName(req.query.name)
+    .then((char) => {
+      console.log(char.data[0].id.toString());
+      marvel.comics.characters(char.data[0].id.toString())
+        .then((comics => {
+          console.log(comics);
+          // res.render('comics/by-character', { comics: comics.data });
+        }))
+        .fail(console.error)
+        .done();
+    })
+    .fail(err => next(err))
+    .done();
 }
