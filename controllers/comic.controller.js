@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+const comicService = require('../services/comics.service');
 
 // const marvelAPI = require('marvel-api');
 
@@ -18,46 +19,26 @@ const mongoose = require('mongoose');
 //   })
 //   .fail(err => next(err))
 //   .done();
-// // const mongoose = require('mongoose');
-// const comicService = require('../services/comics.service');
 
-// module.exports.list = (req, res, next) => {
-//   comicService.getComics()
-//     .then(response => {
-//       console.log(response.data.data.results);
-//       res.render('comics/list-comics', { comics: response.data.data.results })
-//     })
-//     .catch(err => next(err))
-// }
+module.exports.list = (req, res, next) => {
 
-// const marvelAPI = require('marvel-api');
- 
-// const marvel = marvelAPI.createClient({
-//   publicKey: process.env.MV_PUBLIC_KEY,
-//   privateKey: process.env.MV_PRIVATE_KEY
-// });
-
-// module.exports.list = (req, res, next) => {
-//   marvel.comics.findAll(16)
-//   .then((comics) => {
-//     console.log(comics.data)
-//     res.render('comics/list-comics', { comics:comics.data });
-//   })
-//   .fail(err => next(err))
-//   .done();
-// }
+  comicService.getComics()
+    .then(response => {
+      console.log(response.data.data.results);
+      res.render('comics/list-comics', { comics: response.data.data.results })
+    })
+    .catch(err => next(err))
+}
 
 
 module.exports.detail = (req, res, next) => {
-  // comicId = data.id;
 
-  marvel.comics.find(req.params.id)
-  .then((comic) => {
-    // console.log(comic.data)
-    res.render('comics/detail-comic', { comic: comic.data[0] });
+  comicService.getComicId(req.params.id)
+  .then((comicId) => {
+    console.log(comicId.data.data.results[0])
+    res.render('comics/detail-comic', { comicId: comicId.data.data.results[0] });
   })
-  .fail(err => next(err))
-  .done();
+  .catch(err => next(err))
 }
 
 module.exports.byCharacter = (req, res, next) => {
