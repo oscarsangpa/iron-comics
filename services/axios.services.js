@@ -1,7 +1,15 @@
-// const axios = require('axios');
+const error = require('http-errors');
+const axios = require('axios');
+const md5 = require('blueimp-md5');
 
-// const httpClient = axios.create({
-//   baseURL: 'https://gateway.marvel.com/'
-// })
+const ts = new Date().getTime();
+const privateKey = process.env.MV_PRIVATE_KEY;
+const publicKey = process.env.MV_PUBLIC_KEY;
+const hash = md5(ts+privateKey+publicKey);
 
-// module.exports = httpClient
+const httpClient = axios.create({
+  baseURL: `https://gateway.marvel.com/v1/public/comics`,
+  params : { ts, apikey: publicKey, hash }
+})
+
+module.exports = httpClient;

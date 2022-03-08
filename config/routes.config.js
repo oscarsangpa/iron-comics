@@ -34,10 +34,9 @@ router.get('/logout', auth.logout);
 router.get('/profile', authMiddleware.isAuthenticated, user.profile);
 
 /* Marvel Comics routes */
-//router.get('/list-comics', marvelComics.list);
-
 router.get('/list-comics', /*authMiddleware.isAuthenticated*/ comics.list);
 router.get('/detail-comic/:id',/*authMiddleware.isAuthenticated*/ comics.detail);
+router.get('/by-character', /*authMiddleware.isAuthenticated*/ comics.byCharacter);
 
 
 
