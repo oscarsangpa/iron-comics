@@ -5,6 +5,16 @@ const comicService = require('../services/comics.service');
 // const marvelAPI = require('marvel-api');
 
 // const notImage ="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
+
+// const marvel = marvelAPI.createClient({
+//   publicKey: process.env.MV_PUBLIC_KEY,
+//   privateKey: process.env.MV_PRIVATE_KEY
+// });
+
+
+// const marvelAPI = require('marvel-api');
+
+// const notImage ="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
  
 // const marvel = marvelAPI.createClient({
 //   publicKey: process.env.MV_PUBLIC_KEY,

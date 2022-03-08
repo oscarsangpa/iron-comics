@@ -39,5 +39,6 @@ router.get('/list-comics', /*authMiddleware.isAuthenticated*/ comics.list);
 router.get('/detail-comic/:id',/*authMiddleware.isAuthenticated*/ comics.detail);
 router.get('/by-character', /*authMiddleware.isAuthenticated*/ comics.byCharacter);
 
+
 module.exports = router;
 
