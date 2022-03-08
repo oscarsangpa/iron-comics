@@ -70,7 +70,7 @@ body {
   margin: 0;
 }
 
-footer {
+/* footer {
   border-color: #504a4a;
   border-top-width: 3px;
   border-style: solid;
@@ -79,7 +79,7 @@ footer {
   height: 85px;
   position: fixed;
   bottom: 0px;
-}
+} */
 
 footer > div {
   display: flex;
