@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
-const GoogleStrategy = require('passport-google-oauth20');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const User = require('../models/user.model');
 
@@ -28,7 +28,7 @@ passport.use('local-auth', new LocalStrategy(
         if(!user) {
           next(null, false, { error: 'Email or password are incoorrect' })
         } else {
-          return User.checkPassword(password)
+          return user.checkPassword(password)
           .then((match) => {
             if(!match) {
               next(null, false, { error: 'Email or password are incorrect' })
@@ -36,7 +36,7 @@ passport.use('local-auth', new LocalStrategy(
               if (user.active) {
                 next(null, user)
               } else {
-                next(null, false, { error: 'Email or password are incorrect' })
+                next(null, false, { error: 'Check your email. You have to activate your account' })
               }
             }
           })
@@ -49,7 +49,7 @@ passport.use('local-auth', new LocalStrategy(
 passport.use('google-auth', new GoogleStrategy(
   {
     clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    clientSecret: process.env.GOOGLE_SECRET_CLIENT,
     callbackURL: '/auth/google/callback' 
   },
   (accessToken, refreshToken, profile, next) => {

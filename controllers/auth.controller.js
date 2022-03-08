@@ -1,8 +1,7 @@
-const res = require('express/lib/response');
 const mongoose = require('mongoose');
+const User = require('../models/user.model');
 const passport = require('passport');
 const mailer = require('../config/nodemailer.config');
-const User = require('../models/user.model');
 
 
 module.exports.register = (req, res, next) => {
@@ -10,21 +9,26 @@ module.exports.register = (req, res, next) => {
 }
 
 module.exports.doRegister = (req, res, next) => {
+  const user = req.body;
 
   const renderWithErrors = (errors) => {
     res.render('auth/register', { errors, user });
   }
+
 //falta añadir foto
   User.findOne({ email: user.email })
     .then((userFound) => {
       if(userFound) {
         renderWithErrors({ email: 'Email already in use'})
       } else {
+        if(req.file) {
+          user.image = req.file.path;
+        }
         return User.create(user)
-          .then((createdUser => {
+          .then((createdUser) => {
             mailer.activationEmail(createdUser.email, createdUser.tokenActivation)
-            res.redirect('/login');
-          }))
+            res.redirect('/login')
+          })
       }
     })
     .catch(err => {
@@ -44,7 +48,7 @@ module.exports.activate = (req, res, next) => {
     { active: true}
     )
     .then(() => {
-      res.redirect('/login')
+      res.redirect('/')
     })
     .catch(err => next(err))
 }
@@ -54,9 +58,11 @@ const login = (req, res, next, provider) => {
     if(err) {
       next(err)
     } else if(!user) {
-      res.status(404).render('/auth/login', {errors: { email: validations.error} })
+      console.log(validations.error);
+      res.status(404).render('auth/login', {errors: { email: validations.error} })
     } else {
       req.login(user, (loginError) => {
+        console.log('login error: ', loginError, user);
         if(loginError) {
           next(loginError)
         } else {
