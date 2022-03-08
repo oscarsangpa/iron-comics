@@ -31,7 +31,7 @@ router.get('/logout', auth.logout);
 
 
 /* User routes */
-router.get('/profile', authMiddleware.isAuthenticated, user.profile);
+router.get('/profile', /*authMiddleware.isAuthenticated,*/ user.profile);
 
 
 /* Marvel Comics routes */
