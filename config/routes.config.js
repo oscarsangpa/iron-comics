@@ -33,14 +33,11 @@ router.get('/logout', auth.logout);
 /* User routes */
 router.get('/profile', authMiddleware.isAuthenticated, user.profile);
 
-/* Marvel Comics routes */
-//router.get('/list-comics', marvelComics.list);
 
+/* Marvel Comics routes */
 router.get('/list-comics', /*authMiddleware.isAuthenticated*/ comics.list);
 router.get('/detail-comic/:id',/*authMiddleware.isAuthenticated*/ comics.detail);
-
-
-
+router.get('/by-character', /*authMiddleware.isAuthenticated*/ comics.byCharacter);
 
 module.exports = router;
 
