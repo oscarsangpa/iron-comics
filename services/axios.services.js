@@ -7,7 +7,7 @@ const publicKey = process.env.MV_PUBLIC_KEY;
 const hash = md5(ts+privateKey+publicKey);
 
 const httpClient = axios.create({
-  baseURL: `https://gateway.marvel.com/v1/public/comics`,
+  baseURL: `https://gateway.marvel.com/v1/public`,
   params : { ts, apikey: publicKey, hash }
 })
 
