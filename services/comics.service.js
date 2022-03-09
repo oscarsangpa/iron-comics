@@ -2,8 +2,6 @@ const httpClient = require('./axios.services');
 
 const getComics = () => httpClient.get();
 
-// const getComicDetail = () => httpClient.get()
-
 const getComicId = (comicId) => httpClient.get(`/${comicId}`);
 
 // const createBootcamp = (data) => httpClient.post('/bootcamps', data)
@@ -14,5 +12,4 @@ const getComicId = (comicId) => httpClient.get(`/${comicId}`);
 module.exports = {
   getComics,
   getComicId,
-  // getComicDetail
 }

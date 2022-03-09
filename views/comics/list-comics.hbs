@@ -10,7 +10,7 @@
       <div class="position-relative"></div>
   {{!-- //if comic.images.lentg -> img src= comic.images.0.value
   //else if comic.thumbnails.length --}}
-        <a href="/detail-comic">
+    <a href="/detail-comic/{{comic.id}}">
     {{!-- <img src="{{comic.thumbnail.path}}/portrait_medium.jpg" alt="img-comic"/> --}}
         <img class="card-img-top" 
         src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}"/>

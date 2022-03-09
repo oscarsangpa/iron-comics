@@ -59,7 +59,7 @@ passport.use('google-auth', new GoogleStrategy(
     const email = profile.emails[0] ? profile.emails[0].value : undefined;
     const name = profile.displayName;
 
-    if(googleID & email) {
+    if(googleID && email) {
       User.findOne({
         $or: [
           { googleID },
@@ -74,7 +74,8 @@ passport.use('google-auth', new GoogleStrategy(
             email,
             googleID,
             name,
-            password: mongoose.Types.ObjectId()
+            password: mongoose.Types.ObjectId(),
+            active: true
           })
           .then(createdUser => {
             next(null, createdUser)

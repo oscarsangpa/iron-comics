@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const EMAIL_PATTERN = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-/* La contraseña debe tener entre 8 y 15 caracteres, al menos un dígito, una minúscula, una mayúscula y caracter especial */
-const PASSWORD_PATTERN = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+const PASSWORD_PATTERN = /^.{8,}$/i;
 const SALT_ROUNDS = 10;
 
 const UserSchema = new mongoose.Schema({
@@ -21,7 +20,7 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: 'password is required',
-    match: [PASSWORD_PATTERN, 'password needs between 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character'],
+    match: [PASSWORD_PATTERN, 'password needs at least 8 chars'],
   },
   image: {
     type: String,
@@ -43,6 +42,28 @@ const UserSchema = new mongoose.Schema({
     }
   }
 });
+
+UserSchema.virtual('likes', {
+  ref: 'Like',
+  localField: '_id',
+  foreignField: 'user',
+  justOne: false,
+});
+
+UserSchema.virtual('favs', {
+  ref: 'Fav',
+  localField: '_id',
+  foreignField: 'user',
+  justOne: false,
+});
+
+UserSchema.virtual('comments', {
+  ref: 'Comment',
+  localField: '_id',
+  foreignField: 'user',
+  justOne: false,
+});
+
 
 
 UserSchema.pre('save', function(next) {
