@@ -2,23 +2,20 @@
   {{!-- {{#if current.user}} --}}
   
   <div>
-      <img src="/image/usuarioSinFotoPerfil.png"/> 
-      <div>
-        <button>Explorar</button>
-      </div>  
-  </div>
+    <img id="imgDesign" src="/image/usuarioSinFotoPerfil.png"/>  
+    <button class="boton">Explorar</button>
+  </div> 
   {{!-- {{/if}} --}}
 
-  <div>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
+  <form class="form-inline" id="buscador">
+    <button  class="btn btn-outline-success my-2 my-sm-0 boton" type="submit">Search</button>
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  </form>
+  
 
-  <div>
-    <button>Login</button>
-    <button>Register</button>
+  <div id="loginRegister">
+    <button class="boton">Login</button>
+    <button class="boton">Register</button>
   </div>
  
 </nav> 
