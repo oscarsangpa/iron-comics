@@ -2,33 +2,8 @@ const mongoose = require('mongoose');
 
 const comicService = require('../services/comics.service');
 
-// const marvelAPI = require('marvel-api');
-
 // const notImage ="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
 
-// const marvel = marvelAPI.createClient({
-//   publicKey: process.env.MV_PUBLIC_KEY,
-//   privateKey: process.env.MV_PRIVATE_KEY
-// });
-
-
-// const marvelAPI = require('marvel-api');
-
-// const notImage ="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
- 
-// const marvel = marvelAPI.createClient({
-//   publicKey: process.env.MV_PUBLIC_KEY,
-//   privateKey: process.env.MV_PRIVATE_KEY
-// });
-
-// module.exports.list = (req, res, next) => {
-//   marvel.comics.findAll(8)
-//   .then((comics) => {
-//     // console.log(comics.data)
-//     res.render('comics/list-comics', { comics:comics.data });
-//   })
-//   .fail(err => next(err))
-//   .done();
 
 module.exports.list = (req, res, next) => {
 
@@ -51,7 +26,7 @@ module.exports.detail = (req, res, next) => {
   .catch(err => next(err))
 }
 
-module.exports.byCharacter = (req, res, next) => {
+module.exports.byCharacter_ = (req, res, next) => {
   marvel.characters.findByName(req.query.name)
     .then((char) => {
       console.log(char.data[0].id.toString());
@@ -67,13 +42,13 @@ module.exports.byCharacter = (req, res, next) => {
     .done();
 }
 
-// module.exports.detail = (req, res, next) => {
-//   comicId = `${data.id}`;
+module.exports.byCharacter = (req, res, next) => {
 
-//   marvel.comics.find(comicId)
-//   .then((comicId) => {
-//     res.render('comics/detail-comic', { comicId: comicId.data});
-//   })
-//   .fail(err => next(err))
-//   .done();
-// }
+  
+  comicService.getCharacter(req.query.name)
+    .then((char) => {
+      console.log(char.data.data.id.toString())
+    })
+    .catch(err => next(err));
+}
+

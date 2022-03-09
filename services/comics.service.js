@@ -6,7 +6,7 @@ const getComics = () => httpClient.get();
 
 const getComicId = (comicId) => httpClient.get(`/${comicId}`);
 
-// const createBootcamp = (data) => httpClient.post('/bootcamps', data)
+const getCharacter = (characterId) => httpClient.get(`/${characterId}/comics`);
 
 // const deleteBootcamp = (bootcampId) => httpClient.delete(`/bootcamps/${bootcampId}`)
 
@@ -14,5 +14,6 @@ const getComicId = (comicId) => httpClient.get(`/${comicId}`);
 module.exports = {
   getComics,
   getComicId,
+  getCharacter,
   // getComicDetail
 }
