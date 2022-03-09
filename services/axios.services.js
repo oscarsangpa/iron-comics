@@ -1,4 +1,3 @@
-const error = require('http-errors');
 const axios = require('axios');
 const md5 = require('blueimp-md5');
 

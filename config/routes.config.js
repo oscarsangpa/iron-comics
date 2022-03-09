@@ -16,7 +16,6 @@ const SCOPES = [
 /* Home route */
 router.get('/', comics.list);
 
-
 /** Auth routes */
 router.get('/register', auth.register);
 router.get('/login', auth.login);

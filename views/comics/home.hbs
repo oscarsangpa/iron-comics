@@ -1,3 +1,4 @@
+
 {{!-- <h2>Welcome to IronComics!</h2> --}}
 {{!-- {{user.name}} --}}
 
@@ -32,6 +33,32 @@
 
 {{/each}}
 </div>
+</div>
+
+{{!-- helper por poner--> {{#notImage}}"marvel-default.jpg"{{/notImage}} --}}
+=======
+<div class="container">
+  <div class="row mx-auto">
+  {{#each comics as |comic|}}
+    <div class="col-xl-3 col-sm-6 col-xs-12 gy-4 d-flex align-items-stretch">
+      <div class="card w-100 " style="width: 18rem;">
+        <div class="position-relative">
+          {{!-- //if comic.images.lentg -> img src= comic.images.0.value
+          //else if comic.thumbnails.length --}}
+          <a href="/detail-comic">
+            {{!-- <img src="{{comic.thumbnail.path}}/portrait_medium.jpg" alt="img-comic"/> --}}
+            <img class="card-img-top" src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}"/>
+          </a>
+          <h6>{{comic.title}}</h6>
+          <p>{{comic.id}}</p>
+          <button class="mt-2 mb-3 btn btn-outline-warning" >
+            <a href="/detail-comic/{{comic.id}}">Details</a>
+          </button>
+        </div>    
+      </div>
+    </div>   
+{{/each}}
+  </div>
 </div>
 
 {{!-- helper por poner--> {{#notImage}}"marvel-default.jpg"{{/notImage}} --}}

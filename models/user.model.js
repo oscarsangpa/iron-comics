@@ -43,6 +43,28 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
+UserSchema.virtual('likes', {
+  ref: 'Like',
+  localField: '_id',
+  foreignField: 'user',
+  justOne: false,
+});
+
+UserSchema.virtual('favs', {
+  ref: 'Fav',
+  localField: '_id',
+  foreignField: 'user',
+  justOne: false,
+});
+
+UserSchema.virtual('comments', {
+  ref: 'Comment',
+  localField: '_id',
+  foreignField: 'user',
+  justOne: false,
+});
+
+
 
 UserSchema.pre('save', function(next) {
   const user = this;

@@ -1,19 +1,22 @@
-
-{{!-- <h1> navbar </h1> --}}
-{{!-- {{#if current.user}} --}}
 <nav>
-  <!-- <img class="logo_nav" src="/iron-comics/public/image/logoIronComic_final copia.png"/> -->
-  {{!-- <img class="logo_nav" src="/iron-comics/public/image/logoIronComic_final_hexagono copia.png"/> --}}
+  {{!-- {{#if current.user}} --}}
   
   <div>
-      <img src="/image/usuarioSinFotoPerfil.png"/> 
+    <img id="imgDesign" src="/image/usuarioSinFotoPerfil.png"/>  
+    <button class="boton">Explorar</button>
+  </div> 
+  {{!-- {{/if}} --}}
 
-      <div>
-        <button>Explorar</button>
-        <button>NICK DEL USUARIO</button>
-        <!-- La idea es clicar en el nick para que te lleve a tu perfil  -->
-      </div>  
+  <form class="form-inline" id="buscador">
+    <button  class="btn btn-outline-success my-2 my-sm-0 boton" type="submit">Search</button>
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  </form>
+  
+
+  <div id="loginRegister">
+    <button class="boton">Login</button>
+    <button class="boton">Register</button>
   </div>
+ 
+</nav> 
 
-</nav>
-{{!-- {{/if}} --}}

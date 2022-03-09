@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 
 const comicService = require('../services/comics.service');
+const Like = require('../models/like.model');
+const Comment = require('../models/comment.model');
+const Fav = require('../models/fav.model');
 
 // const notImage ="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
-
 
 module.exports.list = (req, res, next) => {
 
