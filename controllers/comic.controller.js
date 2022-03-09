@@ -16,7 +16,7 @@ module.exports.list = (req, res, next) => {
   comicService.getComics()
     .then(response => {
       console.log(response.data.data.results);
-      res.render('comics/list-comics', { comics: response.data.data.results })
+      res.render('comics/home', { comics: response.data.data.results })
     })
     .catch(err => next(err))
 }
