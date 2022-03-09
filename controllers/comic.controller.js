@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
 
 const comicService = require('../services/comics.service');
-const Like = require('../models/like.model');
 const Comment = require('../models/comment.model');
-const Fav = require('../models/fav.model');
 
 // const notImage ="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
 
@@ -20,11 +18,16 @@ module.exports.list = (req, res, next) => {
 
 module.exports.detail = (req, res, next) => {
 
-  comicService.getComicId(req.params.id)
-  .then((comicId) => {
-    // console.log(comicId.data.data.results[0])
-    res.render('comics/detail-comic', { comicId: comicId.data.data.results[0] });
-  })
+  Comments.find( { user: req.user.id })
+    .then((comment) =>{
+      comicService.getComicId(req.params.id)
+      .then((comicId) => {
+        // console.log(comicId.data.data.results[0])
+        res.render('comics/detail-comic', { comicId: comicId.data.data.results[0], comments });
+      })
+
+    })
+
   .catch(err => next(err))
 }
 
@@ -44,3 +47,9 @@ module.exports.byCharacter = (req, res, next) => {
     .catch(err => next(err));
 }
 
+// const ids = []
+
+// const promises = ids.map(id => comicService.getComicId(id))
+
+// Promise.all(promises)
+// .then(comics => res.render('dsadasd', { comics: comics }))

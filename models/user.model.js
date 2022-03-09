@@ -40,22 +40,19 @@ const UserSchema = new mongoose.Schema({
         Math.random().toString(36).substring(7) +
         Math.random().toString(36).substring(7)
     }
+  }, 
+  comics: {
+    watched: {
+      type: [String],
+      default: false
+    },
+    favorites: {
+      type: [String],
+      default: false
+    },
   }
 });
 
-UserSchema.virtual('likes', {
-  ref: 'Like',
-  localField: '_id',
-  foreignField: 'user',
-  justOne: false,
-});
-
-UserSchema.virtual('favs', {
-  ref: 'Fav',
-  localField: '_id',
-  foreignField: 'user',
-  justOne: false,
-});
 
 UserSchema.virtual('comments', {
   ref: 'Comment',
