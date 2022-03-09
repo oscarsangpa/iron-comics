@@ -14,9 +14,8 @@ const SCOPES = [
 
 
 /* Home route */
-router.get('/', (req, res, next) => {
-  res.render("home")
-})
+router.get('/', comics.list);
+
 
 /** Auth routes */
 router.get('/register', auth.register);
@@ -35,7 +34,7 @@ router.get('/profile', /*authMiddleware.isAuthenticated,*/ user.profile);
 
 
 /* Marvel Comics routes */
-router.get('/list-comics', /*authMiddleware.isAuthenticated*/ comics.list);
+// router.get('/list-comics', /*authMiddleware.isAuthenticated*/ comics.list);
 router.get('/detail-comic/:id',/*authMiddleware.isAuthenticated*/ comics.detail);
 router.get('/by-character', /*authMiddleware.isAuthenticated*/ comics.byCharacter);
 
