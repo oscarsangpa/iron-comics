@@ -273,68 +273,6 @@ a {
   justify-content: center;
 }
 
-/* Logo */
-
-/* .logo-login_register {
-  margin: 25px 25px 0;
-  height: 250px;
-} */
-
-/* 
-
-Nav
-
-nav {
-  margin-top: px;
-  width: 100%;
-  height: 140px;
-  position:absolute;
-  background-color: #504a4a;
-  border-color: #f78f3f;
-  border-width: 25px;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1;
-}
-
-.logo_nav {
-  height: 130px;
-  margin: 5px;
-}
-/* 
-nav > div {
-  margin-right: 10px;
-  float: right;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-nav > div > img {
-  height: 100px;
-  width: 100px;
-  border-radius: 50px;
-  background-color: rgb(81,140,202);
-  margin-top: 5px;
-  margin-bottom: 5px;  
-  margin-left: 67px;
-} */
-/* 
-nav > div > button {
-  margin-right: 50px;
-}
-
-.underNav {
-  margin-top: 100px;
-}
-#color-text {
-  text-decoration-color: #504a4a;
-} */
-
-/* .img-width {
-  width: 250px;
-} */
-
 /* tarjeta login & register */
 #card-auth {
   box-shadow: 10px 10px 20px 10px rgba(0, 0, 0, 0.19),
@@ -350,4 +288,10 @@ nav > div > button {
 
 #watched:hover {
   transform: scale(1.1);
+}
+
+.separador {
+  height: 10px;
+  width: 100%;
+  background-color: #504a4a;
 }
