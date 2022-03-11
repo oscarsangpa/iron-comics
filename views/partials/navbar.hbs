@@ -1,27 +1,35 @@
 <nav>
-  {{!-- {{#if current.user}} --}}
-  
   <div>
-    <img id="imgDesign" src="/image/usuarioSinFotoPerfil.png"/>  
-    <button class="boton">Explorar</button>
-  </div> 
-  {{!-- {{/if}} --}}
+    <img id="imgDesign" src="/image/usuarioSinFotoPerfil.png" />
+  </div>
 
   <form class="form-inline" id="buscador">
-    <button  class="btn btn-outline-success my-2 my-sm-0 boton" type="submit">Search</button>
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    {{!-- <i class="fas fa-search"></i> --}}
+    <button
+      class="btn btn-outline-success my-2 my-sm-0 boton"
+      type="submit"
+    >Search</button>
+    <input
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+    />
+    {{! <i class="fas fa-search"></i> }}
   </form>
+
+  {{#if current.user}}
+    <div id="loginRegister">
+      <a href="/login">
+        <button class="boton">Login</button>
+      </a>
+      <a href="/register">
+        <button class="boton">Register</button>
+      </a>
+    </div>
   
-
-  <div id="loginRegister">
-    <a href="/login">
-    <button class="boton">Login</button>
+  {{else}}
+    <a href="/logout">
+      <button class="boton" id="loginRegister">Logout</button>
     </a>
-    <a href="/register">
-    <button class="boton">Register</button>
-    </a>
-  </div>
- 
-</nav> 
-
+  {{/if}}
+</nav>

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
 }
 header {
   display: flex;
@@ -9,11 +9,11 @@ header {
   width: 100%;
   height: 150px;
   margin: 0;
-  background: linear-gradient(to bottom,  rgb(81,140,202), #504a4a);
+  background: linear-gradient(to bottom, rgb(81, 140, 202), #504a4a);
 }
 
 .header_logo {
-  height: 148px; 
+  height: 148px;
 }
 
 nav {
@@ -30,7 +30,7 @@ nav > div > img {
   height: 100px;
   width: 100px;
   border-radius: 50px;
-  background-color: #f78f3f;  
+  background-color: #f78f3f;
   margin-left: 10px;
   margin-right: 5px;
 }
@@ -78,13 +78,12 @@ footer {
   background-color: rgb(144, 174, 206);
   width: 100%;
   height: 30px;
-  /* position: fixed; */
   bottom: 0px;
 }
 
 footer > div {
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -110,7 +109,7 @@ colores {
   background-color: #000000;
   background-color: #504a4a;
   background-color: #f78f3f;
-  background-color: rgb(81,140,202);
+  background-color: rgb(81, 140, 202);
 }
 
 /*HOME*/
@@ -118,41 +117,47 @@ colores {
 a {
   text-decoration: none;
   color: black;
+  width: 200px;
+  height: auto;
 }
 
-#containerNodriza {
+.containerNodriza {
   height: 100%;
   width: 80%;
+  justify-content: center;
+  gap: 20px;
 }
 
 .containerInfoComic {
-  
-  width: 225px;
-  
-}
-
-#containerIndividual {
+  width: 200px;
+  height: 370px;
   background-color: #504a4a4d;
-  justify-content: space-between;
+  padding: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
   flex-direction: column;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-
 }
 
 .containerPortada {
-  height: 70%;
-  width: 200px;
+  flex: 1;
+  width: 100%;
 }
 
-.portada {
-  height: auto;
-  width: 200px;
+.containerPortada img {
+  height: 100%;
+  width: 100%;
+}
+
+.titleHome {
+  height: 40px;
+  margin: 0;
 }
 
 .botonDetail {
   width: 100%;
   background-color: #f78f3f;
-  
+  margin: 0;
+
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -163,33 +168,18 @@ a {
   /* padding: 0.375rem 0.75rem; */
   font-size: 1rem;
   border-radius: 0.25rem;
-  transition: color .15s
-
+  transition: color 0.15s;
 }
 
 .divBotonDetail {
   bottom: 0px !important;
+  float: inline-end;
 }
-
-/* Centrar contenido bocadillo*/
-/* .centrar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; 
-}*/
-
-/* Centrar "Submit" y "Register here" */
-/* #arrejuntar {
-  
-  margin-top: -10px;
-  margin-bottom: -10px;
-} */
 
 /*Tarjeta login-register*/
 
 .boxCard {
-  width: 40%;
+  height: 100%;
 }
 
 /* Bocadillo */
@@ -248,19 +238,31 @@ a {
   -webkit-border-radius: 2px 2px;
   border-radius: 2px 2px;
   border: solid 1px rgb(153, 153, 153);
-  background: webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255,255)), to(rgb(221, 221, 221)));
-  background: gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(221, 221, 221)));
+  background: webkit-gradient(
+    linear,
+    0% 0%,
+    0% 100%,
+    from(rgb(255, 255, 255)),
+    to(rgb(221, 221, 221))
+  );
+  background: gradient(
+    linear,
+    0% 0%,
+    0% 100%,
+    from(rgb(255, 255, 255)),
+    to(rgb(221, 221, 221))
+  );
   color: #333;
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
   text-align: center;
-  text-shadow: 0px 1px 1px rgba(255,255,255,1);
-  -webkit-text-shadow: 0px 1px 1px rgba(255,255,255,1);
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 1);
+  -webkit-text-shadow: 0px 1px 1px rgba(255, 255, 255, 1);
   line-height: 1;
 }
 
-#button-color-red{
+#button-color-red {
   background-color: #e23636;
   border-bottom: #504a4a;
 }
@@ -271,73 +273,10 @@ a {
   justify-content: center;
 }
 
-
-/* Logo */
-
-/* .logo-login_register {
-  margin: 25px 25px 0;
-  height: 250px;
-} */
-
-
-/* 
-
-Nav
-
-nav {
-  margin-top: px;
-  width: 100%;
-  height: 140px;
-  position:absolute;
-  background-color: #504a4a;
-  border-color: #f78f3f;
-  border-width: 25px;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1;
-}
-
-.logo_nav {
-  height: 130px;
-  margin: 5px;
-}
-/* 
-nav > div {
-  margin-right: 10px;
-  float: right;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-nav > div > img {
-  height: 100px;
-  width: 100px;
-  border-radius: 50px;
-  background-color: rgb(81,140,202);
-  margin-top: 5px;
-  margin-bottom: 5px;  
-  margin-left: 67px;
-} */
-/* 
-nav > div > button {
-  margin-right: 50px;
-}
-
-.underNav {
-  margin-top: 100px;
-}
-#color-text {
-  text-decoration-color: #504a4a;
-} */
-
-/* .img-width {
-  width: 250px;
-} */ 
-
 /* tarjeta login & register */
 #card-auth {
-  box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.19), 6px 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 10px 10px 20px 10px rgba(0, 0, 0, 0.19),
+    6px 6px 6px rgba(0, 0, 0, 0.23);
   height: 340px;
   width: 340px;
   border-radius: 10px;
@@ -349,4 +288,10 @@ nav > div > button {
 
 #watched:hover {
   transform: scale(1.1);
+}
+
+.separador {
+  height: 10px;
+  width: 100%;
+  background-color: #504a4a;
 }
