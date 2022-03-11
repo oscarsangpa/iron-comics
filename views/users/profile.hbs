@@ -1,54 +1,66 @@
 <!-- FAVORITOS -->
-  <div id="carouselExampleCaptions" class="carousel slide underNav" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<div class="row mx-auto containerNodriza">
+  {{#each comics as |comic|}}
+    <div class="col-xl-2 col-sm-6 col-xs-12 gy-4 containerInfoComic">
+      {{! ESTA LINEA ESTÁ COMENTADA!!!! //if comic.images.lentg -> img src= comic.images.0.value
+          //else if comic.thumbnails.length }}
+        <a class="containerPortada" href="/detail-comic">
+          <img
+            class="portada"
+            src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"
+            alt="{{comic.title}}"
+          />
+        </a>
+        <h6 class="titleHome">{{comic.title}}</h6>
+        <button class="botonDetail">
+          <a href="/detail-comic/{{comic.id}}">Details</a>
+        </button>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="..." class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+  {{/each}}
+</div>
+
+<div class="separador"></div>
 
 <!-- POR LEER - Se presentarán en cuadrícula -->
-  <div>
-    <div>
-      <!-- IMAGEN -->
-      <!-- Título -->
+<div class="row mx-auto containerNodriza">
+  {{#each comics as |comic|}}
+    <div class="col-xl-2 col-sm-6 col-xs-12 gy-4 containerInfoComic">
+      {{! ESTA LINEA ESTÁ COMENTADA!!!! //if comic.images.lentg -> img src= comic.images.0.value
+          //else if comic.thumbnails.length }}
+        <a class="containerPortada" href="/detail-comic">
+          {{!-- ESTA LINEA ESTÁ COMENTADA!!!! <img src="{{comic.thumbnail.path}}/portrait_medium.jpg" alt="img-comic"/> --}}
+          <img
+            class="portada"
+            src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"
+            alt="{{comic.title}}"
+          />
+        </a>
+        <h6 class="titleHome">{{comic.title}}</h6>
+        <button class="botonDetail">
+          <a href="/detail-comic/{{comic.id}}">Details</a>
+        </button>
     </div>
-    <div>
-      <!-- <a>MARCAR COMO FAVORITO AL HACER CLICK EN EL CORAZÓN</a>
-      <a>MARCAR COMO LEIDO AL HACER CLICK EN EL OJO</a>
-    </div>
-  </div>
+  {{/each}}
+</div>
 
 <!-- LEIDOS - Se presentarán en cuadrícula-->
-
+<div class="row mx-auto containerNodriza">
+  {{#each comics as |comic|}}
+    <div class="col-xl-2 col-sm-6 col-xs-12 gy-4 containerInfoComic">
+      {{! ESTA LINEA ESTÁ COMENTADA!!!! //if comic.images.lentg -> img src= comic.images.0.value
+          //else if comic.thumbnails.length }}
+        <a class="containerPortada" href="/detail-comic">
+          {{!-- ESTA LINEA ESTÁ COMENTADA!!!! <img src="{{comic.thumbnail.path}}/portrait_medium.jpg" alt="img-comic"/> --}}
+          <img
+            class="portada"
+            src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"
+            alt="{{comic.title}}"
+          />
+        </a>
+        <h6 class="titleHome">{{comic.title}}</h6>
+        <button class="botonDetail">
+          <a href="/detail-comic/{{comic.id}}">Details</a>
+        </button>
+    </div>
+  {{/each}}
+</div>
