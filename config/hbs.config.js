@@ -8,7 +8,7 @@ const notImage ="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available
 hbs.registerHelper('imageNotFound', function (options) {
   const { comic, thumbnail } = options.hash;
 
-  if (comic.thumbnail.path === notImage) {
+  if (comic.thumbnail.path !== notImage) {
     return options.fn(this);
   } else {
     return options.inverse(this);

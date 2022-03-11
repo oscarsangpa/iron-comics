@@ -1,4 +1,6 @@
-
+body {
+  font-family: 'Karla', sans-serif;
+}
 header {
   display: flex;
   flex-direction: column;
@@ -114,19 +116,19 @@ colores {
 }
 
 /* Centrar contenido bocadillo*/
-.centrar {
+/* .centrar {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
+  flex-direction: column; 
+}*/
 
 /* Centrar "Submit" y "Register here" */
-#arrejuntar {
+/* #arrejuntar {
   
   margin-top: -10px;
   margin-bottom: -10px;
-}
+} */
 
 /*Tarjeta login-register*/
 
@@ -135,17 +137,17 @@ colores {
 }
 
 /* Bocadillo */
-.bocadillo-redondo {
+/* .bocadillo-redondo {
   margin-top: 50px;
   position: relative;
   height: 325px;
   width: 650px;
   background: white;
   border-radius: 50%;
-  box-shadow: 1px 12px 33px  #f78f3f;
-}
+  box-shadow: 1px 12px 33px  #f78f3f; 
+}*/
 
-.bocadillo-redondo:before {
+/* .bocadillo-redondo:before {
   border: 25px solid white;
   content: '';
   border-left-color: transparent;
@@ -155,7 +157,7 @@ colores {
   bottom: -5px;
   right: 75px;
   transform: rotate(-22deg);
-}
+}/* 
 
 .bocadillo-redondo-register {
   margin-top: 50px;
@@ -164,10 +166,10 @@ colores {
   width: 650px;
   background: white;
   border-radius: 50%;
-  box-shadow: 1px 12px 33px  #f78f3f;
-}
+  box-shadow: 1px 12px 33px  #f78f3f; 
+}*/
 
-.bocadillo-redondo-register:before {
+/* .bocadillo-redondo-register:before {
   border: 25px solid white;
   content: '';
   border-left-color: transparent;
@@ -177,7 +179,7 @@ colores {
   bottom: 5px;
   right: 75px;
   transform: rotate(-22deg);
-}
+} */
 
 #color-text {
   text-decoration-color: #504a4a;
@@ -216,10 +218,10 @@ colores {
 
 /* Logo */
 
-.logo-login_register {
+/* .logo-login_register {
   margin: 25px 25px 0;
   height: 250px;
-}
+} */
 
 
 /* 
@@ -276,3 +278,19 @@ nav > div > button {
 /* .img-width {
   width: 250px;
 } */ 
+
+/* tarjeta login & register */
+#card-auth {
+  box-shadow: 10px 10px 20px 10px rgba(0,0,0,0.19), 6px 6px 6px rgba(0,0,0,0.23);
+  height: 340px;
+  width: 340px;
+  border-radius: 10px;
+}
+
+#favorites:hover {
+  transform: scale(1.1);
+}
+
+#watched:hover {
+  transform: scale(1.1);
+}

@@ -43,12 +43,7 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-UserSchema.virtual('likes', {
-  ref: 'Like',
-  localField: '_id',
-  foreignField: 'user',
-  justOne: false,
-});
+
 
 UserSchema.virtual('favs', {
   ref: 'Fav',
