@@ -1,55 +1,58 @@
 
-<body>
-  {{!-- <div class="bocadillo-redondo-register"> --}}
-    <div class="boxCard" id="login">
-      <div class="container">
-        <div id="login-row" class="row justify-content-center align-items-center">
-          <div id="login-column" class="col-md-6">
-            <div id="login-box" class="col-md-12">
-              <form id="login-form" class="form" action="" method="post">
-                  <br>
-                  <h3 class="text-center #color-text">Register</h3>
-                  <br>
-                  <form action="/register" method="post" class="form-group">
-                      <label for="username" class="#color-text">Username:</label><br>
-                      <input type="text" name="username" id="username" class="form-control">
-                  </form>
-                  <form method="post" class="form-group">
-                      <label class="#color-text">Email:</label><br>
-                      <input type="text" name="email" class="form-control" placeholder="user@example.com">
-                  </form>
-                  <form method="post" class="form-group">
-                      <label class="#color-text">Password:</label><br>
-                      <input type="password" name="password" class="form-control">
-                  </form>
-                  <br>
-                  <div class="form-group centrar" id="arrejuntar">
-                      <input type="submit" class="btn btn-info btn-md" id="button-color-red" value="Register">
-                      <button class="google-button"><a href="/login/google">Register with Google</a></button>
-                  </div>
-              </form>
-            </div>
-          </div>
-        </div>
+  <div class="row justify-content-center mt-4">
+    <div id="card-auth">
+    <h2 class="text-center">Register</h2>
+    <form method="POST" action="/register">
+      <div class="form-group">
+        <label for="formGroupExampleInput">Name</label>
+        <input
+          value="{{user.name}}"
+          name="name"
+          type="text"
+          class="form-control {{#if errors.name}}is-invalid{{/if}}"
+          placeholder="Name">
+
+        {{#if errors.name}}
+          <div class="invalid-feedback">{{errors.name}}</div>
+        {{/if}}
+
       </div>
-    </div>
-  {{!-- </div> --}}
-</body>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Email</label>
+        <input
+          value="{{user.email}}"
+          name="email"
+          type="email"
+          class="form-control {{#if errors.email}}is-invalid{{/if}}"
+          placeholder="example@example.com">
 
+        {{#if errors.email}}
+          <div class="invalid-feedback">{{errors.email}}</div>
+        {{/if}}
 
-  {{!-- <form action="/register" method="post">
-    <div class="container-form">
-      <input type="text" name="name" class="container-form" placeholder="Name" aria-label="User name">
-    </div> --}}
+      </div>
 
-    {{!-- <div class="container-form">
-      <input type="text" name="email" class="container-form" placeholder="user@example.com" aria-label="User name">
-    </div> --}}
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Password</label>
+        <input
+          name="password"
+          type="password"
+          class="form-control {{#if errors.password}}is-invalid{{/if}}"
+          placeholder="Password" required>
 
-    {{!-- <div class="container-form">
-      <input type="password" name="password" class="container-form" placeholder="password" aria-label="User name">
-    </div> --}}
+        {{#if errors.password}}
+          <div class="invalid-feedback">{{errors.password}}</div>
+        {{/if}}
 
-    {{!-- <div class="container-form">
-      <button type="submit">Register</button>
-    </div> --}}
+      </div>
+      <button type="submit" class="btn btn-warning mt-3">Register</button>
+      <a href="/login/google" class="btn btn-outline-primary mt-3">Sign in with Google
+      <i class="fa fa-google"></i>
+      </a>
+
+    </form>
+  </div>
+</div>
+
+  
+

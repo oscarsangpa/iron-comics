@@ -1,6 +1,6 @@
 const httpClient = require('./axios.services');
 
-const getComics = () => httpClient.get('/comics');
+const getComics = () => httpClient.get('/comics?limit=54');
 
 
 const getComicId = (comicId) => httpClient.get(`/comics/${comicId}`);
