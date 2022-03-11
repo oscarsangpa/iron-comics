@@ -1,68 +1,25 @@
-
-{{!-- <h2>Welcome to IronComics!</h2> --}}
+{{! <h2>Welcome to IronComics!</h2> }}
 {{!-- {{user.name}} --}}
 
-
-  <div class="row mx-auto" id="containerNodriza">
-    {{#each comics as |comic|}}
-    <div class="col-xl-2 col-sm-6 col-xs-12 gy-4 d-flex containerInfoComic">
-      <div class="card w-100 " id="containerIndividual" style="width: 18rem">
-        <div class="position-relative"> 
-          {{!-- ESTA LINEA ESTÁ COMENTADA!!!! //if comic.images.lentg -> img src= comic.images.0.value
-          //else if comic.thumbnails.length --}}
-          <div class="containerPortada">
-            <a href="/detail-comic">
-              {{!-- ESTA LINEA ESTÁ COMENTADA!!!! <img src="{{comic.thumbnail.path}}/portrait_medium.jpg" alt="img-comic"/> --}}
-              <img class="portada" src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}"/>
-            </a>
-          </div>
-          <h6>{{comic.title}}</h6>       
-          <div class="divBotonDetail">
-            <button class="botonDetail" id="botonDetail" style="with:100% !important" >
-              <a href="/detail-comic/{{comic.id}}">Details</a>
-            </button>
-          </div>
-        </div>    
-      </div>
-    </div>   
-    {{/each}}
-  </div>
-
-{{!-- helper por poner--> {{#notImage}}"marvel-default.jpg"{{/notImage}} --}}
-
-{{!-- CÓDIGO REPETIDO ABAJO --}}
-{{!-- 
-<div class="input-group rounded">
-  <span class="input-group-text border-0" id="search-addon">
-    <i class="fas fa-search"></i>
-  </span>
-</div>
-
-<div class="container">
-  <div class="row mx-auto">
-{{#each comics as |comic|}}
-{{!-- {{#imageNotFound}} --}}
-<div class="col-xl-2 col-sm-6 col-xs-12 gy-4 d-flex align-items-stretch">
-  <div class="card w-100 " style="width: 18rem;">
-    <div class="position-relative"></div>
-  {{!-- //if comic.images.lentg -> img src= comic.images.0.value
-  //else if comic.thumbnails.length --}}
-    <a href="/detail-comic/{{comic.id}}">
-    {{!-- <img src="{{comic.thumbnail.path}}/portrait_medium.jpg" alt="img-comic"/> --}}
-      {{!-- <img class="card-img-top" 
-      src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}"/>
-    </a>
-      <h6>{{comic.title}}</h6>
-      <p>{{comic.id}}</p>
-      <button class="mt-2 mb-3 btn btn-outline-warning" >
-        <a href="/detail-comic/{{comic.id}}">Details</a>
-      </button>
-      </div>
+<div class="row mx-auto containerNodriza">
+  {{#each comics as |comic|}}
+    <div class="col-xl-2 col-sm-6 col-xs-12 gy-4 containerInfoComic">
+      {{! ESTA LINEA ESTÁ COMENTADA!!!! //if comic.images.lentg -> img src= comic.images.0.value
+          //else if comic.thumbnails.length }}
+        <a class="containerPortada" href="/detail-comic">
+          {{!-- ESTA LINEA ESTÁ COMENTADA!!!! <img src="{{comic.thumbnail.path}}/portrait_medium.jpg" alt="img-comic"/> --}}
+          <img
+            class="portada"
+            src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"
+            alt="{{comic.title}}"
+          />
+        </a>
+        <h6 class="titleHome">{{comic.title}}</h6>
+        <button class="botonDetail">
+          <a href="/detail-comic/{{comic.id}}">Details</a>
+        </button>
     </div>
-    {{!-- {{/imageNotFound}} --}}
-
-{{/each}}
+  {{/each}}
 </div>
-
 
 {{!-- helper por poner--> {{#notImage}}"marvel-default.jpg"{{/notImage}} --}}
