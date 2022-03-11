@@ -13,10 +13,11 @@ const ComicSchema = new mongoose.Schema({
     image: {
         type: String,
         default:
-        "https://res.cloudinary.com/ddu4a2pzu/image/upload/v1646488530/get-lit/no-cover_atepnu.png",
-    },
+        "https://res.cloudinary.com/ddu4a2pzu/image/upload/v1646488530/get-lit/no-cover_atepnu.png" },
     year: {
         type: Number },
+    description: { 
+            type: String },
     categories: { 
         type: String },
     // reviews: { 
