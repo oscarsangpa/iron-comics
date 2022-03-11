@@ -5,14 +5,19 @@ const Like = require('../models/like.model');
 const Comment = require('../models/comment.model');
 const Fav = require('../models/fav.model');
 
-// const notImage ="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
+const notImage ="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
 
 module.exports.list = (req, res, next) => {
 
   comicService.getComics()
     .then(response => {
-      // console.log(response.data.data.results);
-      res.render('comics/home', { comics: response.data.data.results })
+      // if ( response.data.data.results.thumbnail.path.includes(notImage)) {
+      //   next()
+      // } else {
+
+        // console.log(response.data.data.results);
+        res.render('comics/home', { comics: response.data.data.results })
+      // }
     })
     .catch(err => next(err))
 }
