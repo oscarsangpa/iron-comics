@@ -10,7 +10,7 @@ const Fav = require('../models/fav.model');
 module.exports.list = (req, res, next) => {
   Comic.find()
     .then((comics) => {
-      res.render('comics/home', comics)
+      res.render('comics/home', {comics })
     })
     .catch(err => next(err));
   }
@@ -33,14 +33,16 @@ module.exports.list = (req, res, next) => {
 
 
 module.exports.detail = (req, res, next) => {
-
-  Comic.findById()
-    .then(comic => {
-      res.render('comics/detail-comic', comic)
-    })
-    .catch(err => next(err))
-  }
-
+  Comic.findById(req.params.id)
+      .then((comic) => {
+          if(comic) {
+              res.render('comics/detail-comic', { comic });
+          } else {
+          res.redirect('/home');
+          }
+      })
+      .catch(error => next(error));
+}
 //   comicService.getComicId(req.params.id)
 //   .then((comicId) => {
 //     // console.log(comicId.data.data.results[0])
