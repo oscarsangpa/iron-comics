@@ -48,4 +48,4 @@ const ComicSchema = new mongoose.Schema({
 
 const Comic = mongoose.model('Comic', ComicSchema);
 
-module.exports = Comics;
+module.exports = Comic;
