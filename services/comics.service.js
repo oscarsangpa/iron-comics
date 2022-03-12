@@ -1,21 +1,21 @@
-const httpClient = require('./axios.services');
+// const httpClient = require('./axios.services');
 
-const getComics = () => httpClient.get('/comics?limit=54');
-
-
-const getComicId = (comicId) => httpClient.get(`/comics/${comicId}`);
-
-const getComicsByCharacterId = (id) => httpClient.get('/comics', { params: { characters: id }});
+// const getComics = () => httpClient.get('/comics?limit=54');
 
 
-const getCharacters = (name) => httpClient.get('/characters', { params: { name } });
+// const getComicId = (comicId) => httpClient.get(`/comics/${comicId}`);
 
-// const deleteBootcamp = (bootcampId) => httpClient.delete(`/bootcamps/${bootcampId}`)
+// const getComicsByCharacterId = (id) => httpClient.get('/comics', { params: { characters: id }});
 
 
-module.exports = {
-  getComics,
-  getComicId,
-  getComicsByCharacterId,
-  getCharacters,
-}
+// const getCharacters = (name) => httpClient.get('/characters', { params: { name } });
+
+// // const deleteBootcamp = (bootcampId) => httpClient.delete(`/bootcamps/${bootcampId}`)
+
+
+// module.exports = {
+//   getComics,
+//   getComicId,
+//   getComicsByCharacterId,
+//   getCharacters,
+// }

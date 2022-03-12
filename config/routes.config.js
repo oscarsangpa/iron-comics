@@ -32,9 +32,14 @@ router.get('/profile', /*authMiddleware.isAuthenticated,*/ user.profile);
 
 
 /* Marvel Comics routes */
-// router.get('/list-comics', /*authMiddleware.isAuthenticated*/ comics.list);
 router.get('/detail-comic/:id', /*authMiddleware.isAuthenticated,*/ comics.detail);
-  router.get('/new-comic', /*authMiddleware.isAuthenticated,*/ comics.createComic);
+router.get('/new-comic', /*authMiddleware.isAuthenticated,*/ comics.createComic);
+router.get('/:id/edit', /*authMiddleware.isAuthenticated,*/ comics.editComic);
+router.post('/:id/edit', /*authMiddleware.isAuthenticated,*/ comics.doEdit);
+router.post('/:id/delete', authMiddleware.isAuthenticated, comics.delete);
+
+
+
 
 
 

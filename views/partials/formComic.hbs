@@ -1,0 +1,73 @@
+
+  <a href="/detail-comic/{{comic.id}}">
+    <img id="img-edit" src="{{comic.image}}"/>
+  </a>
+{{#if edit }}
+  <form action="/comics/{{comics.id}}/edit" method="POST">
+{{else}}
+  <form action="/comics" method="POST">
+{{/if}}
+  <div class="form-group mb-1">
+    <label for="name">Title</label>
+    <input name="title" type="text" class="form-control {{#if errors.title}}is-invalid{{/if}}" id="title" placeholder="Enter name"
+      value="{{ comic.title }}">
+    {{#if errors.title}}
+      <div class="invalid-feedback">
+        {{errors.title.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="form-group mb-1">
+    <label for="author">Author</label>
+    <input name="author" type="text" class="form-control {{#if errors.author}}is-invalid{{/if}}" id="author" placeholder="Enter address"
+      value="{{ commic.author }}">
+    {{#if errors.author}}
+      <div class="invalid-feedback">
+        {{errors.author.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="form-group mb-1">
+    <label for="image">Image</label>
+    <input name="image" type="file" class="form-control {{#if errors.image}}is-invalid{{/if}}" id="image" placeholder="Enter image"
+      value="{{ comic.image }}">
+    {{#if errors.image}}
+      <div class="invalid-feedback">
+        {{errors.image.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="form-group mb-1">
+    <label for="text">Description</label>
+    <textarea name="description" type="text" class="form-control html-editor {{#if errors.description}}is-invalid{{/if}}" id="text"
+      placeholder="Enter comic description" rows="10">{{ comic.description }}</textarea>
+    {{#if errors.description}}<div class="invalid-feedback">{{errors.description}}</div>
+    {{/if}}
+  </div>
+
+  <div class="form-group mb-1">
+    <label for="year">Year</label>
+    <input name="year" type="date" class="form-control {{#if errors.capacity}}is-invalid{{/if}}" id="year" placeholder="Enter capacity"
+      value="{{ comic.year }}">
+    {{#if errors.year}}
+      <div class="invalid-feedback">
+        {{errors.year.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="form-group mb-1">
+    <label for="categories">Categories</label>
+    <select class="form-select" name="categories" show-labels multiple aria-label="Categories" id="categories">
+        <option
+          value="{{category}}">
+        
+        </option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-warning">Send</button>
+</form>
