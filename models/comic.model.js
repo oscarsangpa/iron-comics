@@ -20,6 +20,13 @@ const ComicSchema = new mongoose.Schema({
     year: {
         type: Number 
     },
+    description: { 
+        type: String,
+        default: ""
+    },
+    categories: { 
+      type: String 
+    },
     description: {
         type: String,
     },    
@@ -31,10 +38,11 @@ const ComicSchema = new mongoose.Schema({
         ref: "Comment" 
     },
     },
+
     { timestamps: true, 
         toJSON: { 
-            virtuals: true } 
-    }); 
+            virtuals: true } }
+    )
 
 
 
