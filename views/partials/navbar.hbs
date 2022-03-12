@@ -3,7 +3,7 @@
     <img id="imgDesign" src="/image/usuarioSinFotoPerfil.png" />
   </div>
 
-  <form class="form-inline" id="buscador">
+  {{!-- <form class="form-inline" id="buscador">
     <button
       class="btn btn-outline-success my-2 my-sm-0 boton"
       type="submit"
@@ -15,9 +15,13 @@
       aria-label="Search"
     />
     {{! <i class="fas fa-search"></i> }}
-  </form>
+  </form> --}}
 
   {{#if current.user}}
+    <a href="/logout">
+      <button class="boton" id="loginRegister">Logout</button>
+    </a>
+  {{else}}
     <div id="loginRegister">
       <a href="/login">
         <button class="boton">Login</button>
@@ -26,10 +30,5 @@
         <button class="boton">Register</button>
       </a>
     </div>
-  
-  {{else}}
-    <a href="/logout">
-      <button class="boton" id="loginRegister">Logout</button>
-    </a>
   {{/if}}
 </nav>

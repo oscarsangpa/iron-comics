@@ -1,13 +1,11 @@
-{{! <h2>Welcome to IronComics!</h2> }}
-{{!-- {{user.name}} --}}
 
+<h3> </h3>
 <div class="row mx-auto containerNodriza">
   {{#each comics as |comic|}}
     <div class="col-xl-2 col-sm-6 col-xs-12 gy-4 containerInfoComic">
-      {{! ESTA LINEA ESTÁ COMENTADA!!!! //if comic.images.lentg -> img src= comic.images.0.value
-          //else if comic.thumbnails.length }}
+    
         <a class="containerPortada" href="/detail-comic/{{comic._id}}">
-          {{!-- ESTA LINEA ESTÁ COMENTADA!!!! <img src="{{comic.thumbnail.path}}/portrait_medium.jpg" alt="img-comic"/> --}}
+         
           <img
             class="portada"
             src="{{comic.image}}"
@@ -21,5 +19,3 @@
     </div>
   {{/each}}
 </div>
-
-{{!-- helper por poner--> {{#notImage}}"marvel-default.jpg"{{/notImage}} --}}

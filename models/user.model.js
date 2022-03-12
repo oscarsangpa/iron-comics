@@ -40,6 +40,18 @@ const UserSchema = new mongoose.Schema({
         Math.random().toString(36).substring(7) +
         Math.random().toString(36).substring(7)
     }
+  },
+  comic: {
+    favorites: {
+      type: Boolean,
+      default: false,
+      list: [],
+    },
+    watched: {
+      type: Boolean,
+      default: false,
+      list: []
+    }
   }
 });
 

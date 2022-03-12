@@ -19,7 +19,7 @@ router.get('/', comics.list);
 router.get('/register', auth.register);
 router.get('/login', auth.login);
 router.post('/register', auth.doRegister);
-router.get('/activate/:token', auth.activate);
+// router.get('/activate/:token', auth.activate);
 router.post('/login', auth.doLogin);
 router.get('/login/google', passport.authenticate('google-auth', { scope: SCOPES  } ));
 router.get('/auth/google/callback', auth.loginGoogle);
@@ -36,11 +36,7 @@ router.get('/detail-comic/:id', /*authMiddleware.isAuthenticated,*/ comics.detai
 router.get('/new-comic', /*authMiddleware.isAuthenticated,*/ comics.createComic);
 router.get('/:id/edit', /*authMiddleware.isAuthenticated,*/ comics.editComic);
 router.post('/:id/edit', /*authMiddleware.isAuthenticated,*/ comics.doEdit);
-router.post('/:id/delete', authMiddleware.isAuthenticated, comics.delete);
-
-
-
-
+router.post('/:id/delete', /*authMiddleware.isAuthenticated,*/ comics.delete);
 
 
 
