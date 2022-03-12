@@ -6,12 +6,34 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{comic.title}}</h5>
+        <h6 class="card-title"> Author: {{comic.author}}</h6>
+        <p class="card-text"><small class="text-muted">Publication date: {{comic.year}}</small></p>
         <p class="card-text">{{comic.description}}</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
-      <button type="button" id="favorites" class="btn btn-success mb-4 ml-5 mr-2">favorites</button>
-      <button type="button" id="watched" class="btn btn-warning mb-4 ml-4">watched</button>
+      <button type="button" id="favorites" class="btn btn-success mb-4 ml-5 mr-2 ">favorites</button>
+      <button type="button" id="watched" class="btn btn-warning mb-4 ml-4 boton">watched</button>
+      <button href="/{{comic.id}}/edit" class="btn btn-success mb-4 ml-5 mr-2 boton">Edit</button>
     </div>
   </div>
 </div>
 
+{{!-- <textarea class="comentariosBox" name="comentarios" rows="10" cols="40">Do you like this comic??</textarea> --}}
+<form action="/comics/{{comic.id}}" method="POST" enctype="multipart/form-data">
+  <div class="form-group mb-3">
+    <label for="description">Comment<span class="required-form-input comentariosBox"></span></label>
+    <textarea name="description"
+      minlength="50"
+      required="true"
+      type="text" 
+      class="form-control html-editor {{#if errors.description}}is-invalid{{/if}}"
+      id="text"
+      placeholder="Tell us about your experience"
+      rows="3">{{description}}</textarea>
+    {{#if errors.name}}
+      <div class="invalid-feedback">
+        {{errors.name.message}}
+      </div>
+    {{/if}}
+  </div>
+  <button type="submit" class="boton">Submit</button>
+</form>

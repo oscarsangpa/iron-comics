@@ -12,24 +12,8 @@ module.exports.list = (req, res, next) => {
     .then((comics) => {
       res.render('comics/home', {comics })
     })
-    .catch(err => next(err));
+    .catch(error => next(error));
   }
-
-
-//   comicService.getComics()
-//     .then(response => {
-//       // if ( response.data.data.results.thumbnail.path.includes(notImage)) {
-//       //   next()
-//       // } else {
-
-//         // console.log(response.data.data.results);
-//         res.render('comics/home', { comics: response.data.data.results })
-//       // }
-//     })
-//     .catch(err => next(err))
-// }
-
-
 
 
 module.exports.detail = (req, res, next) => {
@@ -38,63 +22,76 @@ module.exports.detail = (req, res, next) => {
           if(comic) {
               res.render('comics/detail-comic', { comic });
           } else {
-          res.redirect('/home');
+          res.redirect('comics/home');
           }
       })
       .catch(error => next(error));
 }
-//   comicService.getComicId(req.params.id)
-//   .then((comicId) => {
-//     // console.log(comicId.data.data.results[0])
-//     res.render('comics/detail-comic', { comicId: comicId.data.data.results[0] });
-//   })
-//   .catch(err => next(err))
-// }
 
 
-// module.exports.byCharacter = (req, res, next) => {
-//   const name = req.query.name;
-  
-//   comicService.getCharacters(name)
-//     .then((char) => {
-//       const characterId = char.data.data.results[0]?.id;
+module.exports.createComic = (req, res, next) => {
+  res.render('comics/new-comic');
+}
 
-//       comicService.getComicsByCharacterId(characterId)
-//         .then(comics => {
-//           res.render('comics/by-character', { comics: comics.data.data.results });
-//         })
-//     })
-//     .catch(err => next(err));
-// }
+module.exports.doCreateComic = (req, res, next) => {
 
-    module.exports.createComic = (req, res, next) => {
-      res.render('comics/new-comic');
-    }
+    const comic = new Comic({
+      title: req.body.titlle,
+      author: req.body.author,
+      image: req.body.image || undefined,
+      categories: req.body.categories,
+      description: req.body.description,
+    });
 
-    module.exports.doCreateComic = (req, res, next) => {
+    comic 
+      .save()
+      .then(() => res.redirect('/home'))
+      .catch((err) => {
+        if(err instanceof mongoose.Error.ValidationError) {
+          res.status(400).render('comics/new-comic',{
+            errors: err.errors,
+            comic
+          });
+        } else {
+          next(err)
+        }
+      })
+}
 
-      const comic = new Comic({
-        title: req.body.titlle,
-        author: req.body.author,
-        image: req.body.image || undefined,
-        categories: req.body.categories,
-        description: req.body.description,
 
+module.exports.editComic = (req, res, next) => {
+
+  Comic.findById(req.params.id)
+    .then((comic) => {
+      res.render('comics/edit', {
+        comic,
+      
       });
+    })
+    .catch((error) => next(error))
 
-      comic 
-        .save()
-        .then(() => res.redirect('/home'))
-        .catch((err) => {
-          if(err instanceof mongoose.Error.ValidationError) {
-            res.status(400).render('comics/new-comic',{
-              errors: err.errors,
-              comics,
+};
 
-            });
-          } else {
-            next(err)
-          }
-        })
-
+module.exports.doEdit = (req, res, next) => {
+  Comic.findByIdAndUpdate(req.params.id, req.body, { runValidators: true, new: true })
+    .then((comic) => res.redirect(`/comics/${comic.id}`))
+    .catch((error) => {
+      if (error instanceof mongoose.Error.ValidationError) {
+        req.body.id = req.params.id;
+        res.status(400).render('comics/edit', {
+          errors: error.errors,
+          comic: req.body,
+          
+        });
+      } else {
+        next(error);
       }
+    });
+};
+
+module.exports.delete = (req, res, next) => {
+  Comic.findByIdAndDelete(req.params.id)
+    .then(() => res.redirect('/home'))
+    .catch(error => next(error));
+};
+
