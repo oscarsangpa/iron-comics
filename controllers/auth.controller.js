@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const User = require('../models/user.model');
 const passport = require('passport');
-const mailer = require('../config/nodemailer.config');
+// const mailer = require('../config/nodemailer.config');
 
 
 module.exports.register = (req, res, next) => {
