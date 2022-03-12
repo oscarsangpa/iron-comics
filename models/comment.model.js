@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const CommentSchema = new Schema({
   comic: {
-    type: [String],
-    ref: '',
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Comic',
     required: true,
   },
   user: {
@@ -12,10 +12,9 @@ const CommentSchema = new Schema({
     ref: 'User',
     required: true,
   },
-  image:{
-    type: mongoose.Schema.Types.String
-  }
-}, { timestamps: true })
+},
+
+{ timestamps: true })
 
 const Comment = mongoose.model('Comment', CommentSchema);
 module.exports = Comment;

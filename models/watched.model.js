@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const likeSchema = new Schema({
+const WatchedSchema = new Schema({
   comic: {
     type: [String],
     ref: 'Comic',
@@ -14,5 +14,5 @@ const likeSchema = new Schema({
   }
 }, { timestamps: true })
 
-const Like = mongoose.model('Like', likeSchema);
-module.exports = Like;
+const Watched = mongoose.model('Watched', WatchedSchema);
+module.exports = Watched;
