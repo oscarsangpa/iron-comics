@@ -4,7 +4,6 @@ const passport = require('passport');
 const auth = require('../controllers/auth.controller');
 const user = require('../controllers/user.controller');
 const authMiddleware = require('../middlewares/auth.middleware');
-// const marvelComics = require('../controllers/comic.controller');
 const comics = require('../controllers/comic.controller');
 
 const SCOPES = [

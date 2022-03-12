@@ -6,11 +6,11 @@
     <div class="col-xl-2 col-sm-6 col-xs-12 gy-4 containerInfoComic">
       {{! ESTA LINEA ESTÁ COMENTADA!!!! //if comic.images.lentg -> img src= comic.images.0.value
           //else if comic.thumbnails.length }}
-        <a class="containerPortada" href="/detail-comic">
+        <a class="containerPortada" href="/detail-comic/{{comic._id}}">
           {{!-- ESTA LINEA ESTÁ COMENTADA!!!! <img src="{{comic.thumbnail.path}}/portrait_medium.jpg" alt="img-comic"/> --}}
           <img
             class="portada"
-            src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"
+            src="{{comic.image}}"
             alt="{{comic.title}}"
           />
         </a>
