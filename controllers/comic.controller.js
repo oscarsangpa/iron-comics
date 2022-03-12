@@ -9,8 +9,8 @@ const Fav = require('../models/fav.model');
 
 module.exports.list = (req, res, next) => {
   Comic.find()
-    .then((comic) => {
-      res.render('comics/home', comic)
+    .then((comics) => {
+      res.render('comics/home', comics)
     })
     .catch(err => next(err));
   }
