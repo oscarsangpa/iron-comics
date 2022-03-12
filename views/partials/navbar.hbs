@@ -15,9 +15,13 @@
       aria-label="Search" 
     />--}}
     {{! <i class="fas fa-search"></i> }}
-  </form>
+  </form> --}}
 
   {{#if current.user}}
+    <a href="/logout">
+      <button class="boton" id="loginRegister">Logout</button>
+    </a>
+  {{else}}
     <div id="loginRegister">
       <a href="/login">
         <button class="boton">Login</button>
@@ -26,10 +30,5 @@
         <button class="boton">Register</button>
       </a>
     </div>
-  
-  {{else}}
-    <a href="/logout">
-      <button class="boton" id="loginRegister">Logout</button>
-    </a>
   {{/if}}
 </nav>

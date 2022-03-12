@@ -26,8 +26,7 @@ module.exports.doRegister = (req, res, next) => {
         }
         return User.create(user)
           .then((createdUser) => {
-            mailer.activationEmail(createdUser.email, createdUser.tokenActivation)
-            res.redirect('/login')
+              res.redirect('/login')
           })
       }
     })
@@ -40,18 +39,18 @@ module.exports.doRegister = (req, res, next) => {
     })
 }
 
-module.exports.activate = (req, res, next) => {
-  const tokenActivation = req.params.token;
+// module.exports.activate = (req, res, next) => {
+//   const tokenActivation = req.params.token;
 
-  User.findByIdAndUpdate(
-    { tokenActivation, active: false },
-    { active: true}
-    )
-    .then(() => {
-      res.redirect('/')
-    })
-    .catch(err => next(err))
-}
+//   User.findByIdAndUpdate(
+//     { tokenActivation, active: false },
+//     { active: true}
+//     )
+//     .then(() => {
+//       res.redirect('/')
+//     })
+//     .catch(err => next(err))
+// }
 
 const login = (req, res, next, provider) => {
   passport.authenticate( provider || 'local-auth', (err, user, validations) => {

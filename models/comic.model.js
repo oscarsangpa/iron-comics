@@ -47,6 +47,13 @@ const ComicSchema = new mongoose.Schema({
             virtuals: true } }
     )
 
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: "Comment" 
+    },
+    
+  },
+  { timestamps: true }
+);
 
 
 const Comic = mongoose.model('Comic', ComicSchema);

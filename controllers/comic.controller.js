@@ -4,6 +4,7 @@ const Comic = require('../models/comic.model');
 // const comicService = require('../services/comics.service');
 const Comment = require('../models/comment.model');
 const Fav = require('../models/fav.model');
+const Watched = require('../models/watched.model');
 
 // const notImage ="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
 

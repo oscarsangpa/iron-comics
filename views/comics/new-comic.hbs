@@ -1,74 +1,10 @@
-{{#if edit }}
-  <form action="/comic/{{comic.id}}/edit" method="POST">
-{{else}}
-  <form action="/comic" method="POST">
-{{/if}}
-  <div class="form-group mb-1">
-    <label for="title">Title</label>
-    <input title="title" type="text" class="form-control {{#if errors.title}}is-invalid{{/if}}" id="title" placeholder="Enter title"
-      value="{{ comic.title }}">
-    {{#if errors.title}}
-      <div class="invalid-feedback">
-        {{errors.title.message}}
-      </div>
-    {{/if}}
+<div class="container">
+  <div class="row mx-auto justify-content-center">
+    <div class="col-6">
+      <h1>Create to new comic! </h1>
+
+      {{>form edit=false }}
+    </div>
   </div>
-  <div class="form-group mb-1">
-    <label for="author">Author</label>
-    <input name="author" type="text" class="form-control {{#if errors.author}}is-invalid{{/if}}" id="author" placeholder="Enter author"
-      value="{{ comic.author }}">
-    {{#if errors.author}}
-      <div class="invalid-feedback">
-        {{errors.author.message}}
-      </div>
-    {{/if}}
-  </div>
-  <div class="form-group mb-1">
-    <label for="cartoonist">Cartoonist</label>
-    <input name="cartoonist" type="text" class="form-control {{#if errors.cartoonist}}is-invalid{{/if}}" id="cartoonist" placeholder="Enter cartoonist"
-      value="{{ comic.cartoonist }}">
-    {{#if errors.cartoonist}}
-      <div class="invalid-feedback">
-        {{errors.cartoonist.message}}
-      </div>
-    {{/if}}
-  </div>
-  <div class="form-group mb-1">
-    <label for="image">Image</label>
-    <input name="image" type="text" class="form-control {{#if errors.image}}is-invalid{{/if}}" id="image" placeholder="Enter image"
-      value="{{ comic.image }}">
-    {{#if errors.image}}
-      <div class="invalid-feedback">
-        {{errors.image.message}}
-      </div>
-    {{/if}}
-  </div>
-  <div class="form-group mb-1">
-    <label for="year">Year</label>
-    <input name="year" type="text" class="form-control {{#if errors.year}}is-invalid{{/if}}" id="year" placeholder="Enter year"
-      value="{{ comic.year }}">
-    {{#if errors.year}}
-      <div class="invalid-feedback">
-        {{errors.year.message}}
-      </div>
-    {{/if}}
-  </div>
-  <div class="form-group mb-1">
-    <label for="text">Description</label>
-    <textarea name="description" type="text" class="form-control html-editor {{#if errors.description}}is-invalid{{/if}}" id="text"
-      placeholder="Enter comic description" rows="10">{{ comic.description }}</textarea>
-    {{#if errors.description}}<div class="invalid-feedback">{{errors.description}}</div>
-    {{/if}}
-  </div>
-  <div class="form-group mb-1">
-    <label for="categories">Categories</label>
-    <select class="form-select" type="text" name="categories" show-labels multiple aria-label="Categories" id="categories">
-        <option value="value1">Manga</option>
-        <option value="value1">DC</option>
-        <option value="value1">Marvel</option>
-          {{!-- {{#comicHasCategory category=category comic=../comic}} selected {{/comicHasCategory}}  --}}
-    </select>
-  </div>
-  <button type="submit" class="btn btn-primary">Send</button>
-</form>
+</div>
 
