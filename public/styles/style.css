@@ -43,6 +43,17 @@ nav > div > a > img {
   color: #000000 !important;
 }
 
+.create-boton {
+  margin: 20px;
+  background-color: #f78f3f !important;
+  border: #504a4a !important;
+  color: #000000 !important;
+  text-decoration: none;
+  width: fit-content;
+  padding: 3px 15px;
+  border-radius: 4px;
+}
+
 #buscador {
   width: 50%;
   height: 25px;

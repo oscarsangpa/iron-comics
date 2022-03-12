@@ -5,6 +5,7 @@ const auth = require('../controllers/auth.controller');
 const user = require('../controllers/user.controller');
 const authMiddleware = require('../middlewares/auth.middleware');
 const comics = require('../controllers/comic.controller');
+const upload = require('../config/storage.config');
 
 const SCOPES = [
   "https://www.googleapis.com/auth/userinfo.profile",
@@ -32,11 +33,12 @@ router.get('/profile', /*authMiddleware.isAuthenticated,*/ user.profile);
 
 
 /* Marvel Comics routes */
-router.get('/detail-comic/:id', /*authMiddleware.isAuthenticated,*/ comics.detail);
-router.get('/new-comic', /*authMiddleware.isAuthenticated,*/ comics.createComic);
-router.get('/:id/edit', /*authMiddleware.isAuthenticated,*/ comics.editComic);
-router.post('/:id/edit', /*authMiddleware.isAuthenticated,*/ comics.doEdit);
-router.post('/:id/delete', /*authMiddleware.isAuthenticated,*/ comics.delete);
+router.get('/comics/create', /*authMiddleware.isAuthenticated,*/ comics.createComic);
+router.post('/comics/create', /*authMiddleware.isAuthenticated,*/upload.single('image'), comics.doCreateComic);
+router.get('/comics/:id', /*authMiddleware.isAuthenticated,*/ comics.detail);
+router.get('/comics/:id/edit', /*authMiddleware.isAuthenticated,*/ comics.editComic);
+router.post('/comics/:id/edit', /*authMiddleware.isAuthenticated,*/upload.single('image'), comics.doEdit);
+router.post('/comics/:id/delete', /*authMiddleware.isAuthenticated,*/ comics.delete);
 
 
 

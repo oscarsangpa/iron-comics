@@ -10,12 +10,12 @@ const ComicSchema = new mongoose.Schema({
         required: "Author is required" 
     },
     cartoonist: {
-        type: String,
-        require: "Cartoonist is requerid" 
+        type: String
     }, 
     image: {
         type: String,
-        default: "" 
+        default: "https://res.cloudinary.com/dyevght88/image/upload/v1647077390/ironcomics/image-comic-default/istockphoto-924949200-170667a_mguvly.jpg",
+        required: "Image is requered" 
     },
     year: {
       type: Number
@@ -36,24 +36,12 @@ const ComicSchema = new mongoose.Schema({
     categories: { 
         type: String 
     },
-    reviews: { 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: "Comment" 
     },
-    },
-
     { timestamps: true, 
         toJSON: { 
             virtuals: true } }
     )
-
-      type: mongoose.Schema.Types.ObjectId, 
-      ref: "Comment" 
-    },
     
-  },
-  { timestamps: true }
-);
 
 
 const Comic = mongoose.model('Comic', ComicSchema);

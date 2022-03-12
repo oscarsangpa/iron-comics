@@ -1,10 +1,9 @@
 
-<h3> </h3>
 <div class="row mx-auto containerNodriza">
   {{#each comics as |comic|}}
     <div class="col-xl-2 col-sm-6 col-xs-12 gy-4 containerInfoComic">
     
-        <a class="containerPortada" href="/detail-comic/{{comic._id}}">
+        <a class="containerPortada" href="/comics/{{comic._id}}">
          
           <img
             class="portada"
@@ -14,8 +13,12 @@
         </a>
         <h6 class="titleHome">{{comic.title}}</h6>
         <button class="botonDetail">
-          <a href="/detail-comic/{{comic.id}}">Details</a>
+          <a href="/comics/{{comic.id}}">Details</a>
         </button>
     </div>
   {{/each}}
 </div>
+
+<a class="create-boton" href="/comics/create">
+  Create Comic
+</a>

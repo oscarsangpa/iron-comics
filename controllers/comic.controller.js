@@ -35,18 +35,21 @@ module.exports.createComic = (req, res, next) => {
 }
 
 module.exports.doCreateComic = (req, res, next) => {
-
+  console.log(req.file);
     const comic = new Comic({
-      title: req.body.titlle,
+      title: req.body.title,
       author: req.body.author,
-      image: req.body.image || undefined,
       categories: req.body.categories,
       description: req.body.description,
     });
 
+    if(req.file) {
+      comic.image = req.file.path;
+    }
+
     comic 
       .save()
-      .then(() => res.redirect('/home'))
+      .then(() => res.redirect('/'))
       .catch((err) => {
         if(err instanceof mongoose.Error.ValidationError) {
           res.status(400).render('comics/new-comic',{
@@ -74,6 +77,9 @@ module.exports.editComic = (req, res, next) => {
 };
 
 module.exports.doEdit = (req, res, next) => {
+  if(req.file) {
+    req.body.image = req.file.path;
+  }
   Comic.findByIdAndUpdate(req.params.id, req.body, { runValidators: true, new: true })
     .then((comic) => res.redirect(`/comics/${comic.id}`))
     .catch((error) => {
