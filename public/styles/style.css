@@ -8,12 +8,14 @@ header {
   justify-content: center;
   width: 100%;
   height: 150px;
-  margin: 0;
+  margin: 0px;
   background: linear-gradient(to bottom, rgb(81, 140, 202), #504a4a);
 }
 
 .header_logo {
-  height: 148px;
+  height: 140px;
+  text-align: center;
+  margin: 10px 20px 0 -20px;
 }
 
 nav {
@@ -26,7 +28,7 @@ nav {
   display: flex;
 }
 
-nav > div > img {
+nav > div > a > img {
   height: 100px;
   width: 100px;
   border-radius: 50px;
@@ -182,51 +184,6 @@ a {
   height: 100%;
 }
 
-/* Bocadillo */
-/* .bocadillo-redondo {
-  margin-top: 50px;
-  position: relative;
-  height: 325px;
-  width: 650px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 1px 12px 33px  #f78f3f; 
-}*/
-
-/* .bocadillo-redondo:before {
-  border: 25px solid white;
-  content: '';
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-  position: absolute;
-  bottom: -5px;
-  right: 75px;
-  transform: rotate(-22deg);
-}/* 
-
-.bocadillo-redondo-register {
-  margin-top: 50px;
-  position: relative;
-  height: 375px;
-  width: 650px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 1px 12px 33px  #f78f3f; 
-}*/
-
-/* .bocadillo-redondo-register:before {
-  border: 25px solid white;
-  content: '';
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-  position: absolute;
-  bottom: 5px;
-  right: 75px;
-  transform: rotate(-22deg);
-} */
-
 #color-text {
   text-decoration-color: #504a4a;
 }
@@ -298,4 +255,9 @@ a {
 
 #img-edit {
   width: 180px;
+}
+
+.comentariosBox {
+  width: 75% !important;
+  /* maxlength: 350; */
 }

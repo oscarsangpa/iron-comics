@@ -5,7 +5,8 @@
         "cartoonist": "Nobuhiro Watsuki",
         "image": "https://i1.whakoom.com/large/32/05/8d8f4c2f25704db6bf1e93617e67600c.jpg",
         "year": 1994,      
-        "description": "Kenshin Himura (Takeru Sato) is a famous samurai known for his skill with the katana and his coolness when it comes to killing. In the past he was in the service of the Ishin Shishi, a group of patriots who fought to restore power to the Emperor, fighting hundreds of battles and taking many lives."
+        "description": "Kenshin Himura (Takeru Sato) is a famous samurai known for his skill with the katana and his coolness when it comes to killing. In the past he was in the service of the Ishin Shishi, a group of patriots who fought to restore power to the Emperor, fighting hundreds of battles and taking many lives.",
+        "categories": "Manga"
     },
     {
         "title": "NARUTO",      
@@ -13,7 +14,8 @@
         "cartoonist": "Masashi Kishimoto",
         "image": "https://www.milcomics.com/1249282-large_default/naruto-01.jpg",
         "year": "1999",      
-        "description": "At first, the villagers of Konoha hated Naruto because he has the Nine-Tailed Fox (九尾の狐 Kyūbi no Yōko) called by his true name Kurama, a beast that had previously attacked Konoha, sealed inside him."
+        "description": "At first, the villagers of Konoha hated Naruto because he has the Nine-Tailed Fox (九尾の狐 Kyūbi no Yōko) called by his true name Kurama, a beast that had previously attacked Konoha, sealed inside him.",
+        "categories": "Manga"
     },
     {
         "title": "Neon Genesis Evangelion",      
@@ -21,7 +23,8 @@
         "cartoonist": "Gainax",
         "image": "https://www.normaeditorial.com/upload/media/albumes/0001/02/xthumb_1447_albumes_big.jpeg.pagespeed.ic.-PBLHnXF7w.webp",
         "year": "1994",      
-        "description": "The story of the work takes place in a futuristic world in which a paramilitary organization called NERV protects humanity from attacks by beings of unknown origin and nature, the Angels, using humanoid biomecha called Evangelion (shortened). to EVA)."
+        "description": "The story of the work takes place in a futuristic world in which a paramilitary organization called NERV protects humanity from attacks by beings of unknown origin and nature, the Angels, using humanoid biomecha called Evangelion (shortened). to EVA).",
+        "categories": "Manga"
     },
     {
         "title": "Berserk",      
@@ -29,7 +32,8 @@
         "cartoonist": "Kentaro Miura",
         "image": "https://images-na.ssl-images-amazon.com/images/I/51xVYOT4mVL._SX352_BO1,204,203,200_.jpg",
         "year": "1989",      
-        "description": "A dark and bad-faced antihero, with a herculean body chiseled during his performance as a mercenary, without an iota of empathy for his enemies or his peers."
+        "description": "A dark and bad-faced antihero, with a herculean body chiseled during his performance as a mercenary, without an iota of empathy for his enemies or his peers.",
+        "categories": "Manga"
     },
     {
         "title": "Batman Lobo",      
@@ -37,7 +41,8 @@
         "cartoonist": " Sam Kieth, Simon Bisley",
         "image": "https://www.ecccomics.com/content/productos/7137/PORTADA_JPG_ALTA_BatmanLobo_Integral.jpg",
         "year": "2019",      
-        "description": "When Bat Man and Man collide... Man, nothing is ever the same again! And here we have as a test, in a single volume, the two stories in which Batman and Lobo have seen each other's faces. In the first, an Other Worlds special, the Joker hires Lobo to assassinate Batman... and the result leaves Gotham City in the dust! In the second —already much more serious—, both face an alien entity capable of possessing any female and turning her into the architect of absolute devastation throughout the universe."
+        "description": "When Bat Man and Man collide... Man, nothing is ever the same again! And here we have as a test, in a single volume, the two stories in which Batman and Lobo have seen each other's faces. In the first, an Other Worlds special, the Joker hires Lobo to assassinate Batman... and the result leaves Gotham City in the dust! In the second —already much more serious—, both face an alien entity capable of possessing any female and turning her into the architect of absolute devastation throughout the universe.",
+        "categories": "DC"
     },
     {
         "title": "deadpool the duck",      
@@ -45,6 +50,7 @@
         "cartoonist": "Jacopo Camagni",
         "image": "https://images-na.ssl-images-amazon.com/images/I/71UXfG7+GtL.jpg",
         "year": "2017",      
-        "description": "What do you get when you cross a cynical anthropomorphic duck with Marvel's stinkiest mercenary? Yes, The Duck Massacre."
+        "description": "What do you get when you cross a cynical anthropomorphic duck with Marvel's stinkiest mercenary? Yes, The Duck Massacre.",
+        "categories": "Marvel"
     }
 ]

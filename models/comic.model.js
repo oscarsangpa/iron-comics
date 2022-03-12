@@ -2,16 +2,20 @@ const mongoose = require("mongoose");
 
 const ComicSchema = new mongoose.Schema({
     title: { 
-      type: String, 
-      required: "Title is required" 
+        type: String, 
+        required: "Title is required" 
     },
     author: { 
-      type: String,
-      required: "Author is required" 
+        type: String, 
+        required: "Author is required" 
     },
+    cartoonist: {
+        type: String,
+        require: "Cartoonist is requerid" 
+    }, 
     image: {
-      type: String,
-      default: "",
+        type: String,
+        default: "" 
     },
     year: {
       type: Number
@@ -20,9 +24,29 @@ const ComicSchema = new mongoose.Schema({
       type: String 
     },
     description: { 
+        type: String,
+        default: ""
+    },
+    categories: { 
       type: String 
     },
+    description: {
+        type: String,
+    },    
+    categories: { 
+        type: String 
+    },
     reviews: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Comment" 
+    },
+    },
+
+    { timestamps: true, 
+        toJSON: { 
+            virtuals: true } }
+    )
+
       type: mongoose.Schema.Types.ObjectId, 
       ref: "Comment" 
     },
@@ -31,5 +55,7 @@ const ComicSchema = new mongoose.Schema({
   { timestamps: true }
 );
 
+
 const Comic = mongoose.model('Comic', ComicSchema);
+
 module.exports = Comic;

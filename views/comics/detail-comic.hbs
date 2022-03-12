@@ -1,39 +1,7 @@
-<body>
-    <div>
-        {{!-- IMAGEN DEL CÓMIC --}}
-    </div>
-    <div>
-        {{!-- 
-        NOMBRE DEL COMIC
-        AUTOR
-        DESCRIPCIÓN
-        SOCRE
-         --}}
-    </div>
-    <div>
-        {{!-- 
-        FAV
-        AÑADIR A LISTA POR LEER
-        LEIDO
-        PUNTUAR
-         --}}
-    </div>
-</body>
-
-<h2> View de details </h2>
-
-
- {{!-- <h3>{{comic.id}}</h3>
- <p>{{comic.title}}</p>
- <img class="img-thumbnail" 
-      src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}"/> --}}
-
- {{!-- <p>hola</p> --}}
-
-<div class="card mb-3" style="max-width: 900px;">
+<div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="{{comic.image}}" class="img-fluid rounded-start" alt="...">
+      <img src="{{comic.image}}" class="img-fluid rounded-start "  alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -42,11 +10,31 @@
         <p class="card-text"><small class="text-muted">Publication date: {{comic.year}}</small></p>
         <p class="card-text">{{comic.description}}</p>
       </div>
-        <a href=""></a>
-      <button type="button" id="favorites" class="btn btn-success mb-4 ml-5 mr-2">favorites</button>
-      <button type="button" id="watched" class="btn btn-warning mb-4 ml-4">watched</button>
-      <a href="/{{comic.id}}/edit" class="btn btn-success mt-1">Edit</a>
+
+      <button type="button" id="favorites" class="btn btn-success mb-4 ml-5 mr-2 ">favorites</button>
+      <button type="button" id="watched" class="btn btn-warning mb-4 ml-4 boton">watched</button>
+      <button href="/{{comic.id}}/edit" class="btn btn-success mb-4 ml-5 mr-2 boton">Edit</button>
     </div>
   </div>
 </div>
 
+{{!-- <textarea class="comentariosBox" name="comentarios" rows="10" cols="40">Do you like this comic??</textarea> --}}
+<form action="/comics/{{comic.id}}" method="POST" enctype="multipart/form-data">
+  <div class="form-group mb-3">
+    <label for="description">Comment<span class="required-form-input comentariosBox"></span></label>
+    <textarea name="description"
+      minlength="50"
+      required="true"
+      type="text" 
+      class="form-control html-editor {{#if errors.description}}is-invalid{{/if}}"
+      id="text"
+      placeholder="Tell us about your experience"
+      rows="3">{{description}}</textarea>
+    {{#if errors.name}}
+      <div class="invalid-feedback">
+        {{errors.name.message}}
+      </div>
+    {{/if}}
+  </div>
+  <button type="submit" class="boton">Submit</button>
+</form>
