@@ -3,33 +3,41 @@ const mongoose = require("mongoose");
 const ComicSchema = new mongoose.Schema({
     title: { 
         type: String, 
-        required: "Title is required" },
+        required: "Title is required" 
+    },
     author: { 
         type: String, 
-        required: "Author is required" },
+        required: "Author is required" 
+    },
     cartoonist: {
         type: String,
-        require: "Cartoonist is requerid" }, 
+        require: "Cartoonist is requerid" 
+    }, 
     image: {
         type: String,
-        default:
-        "https://res.cloudinary.com/ddu4a2pzu/image/upload/v1646488530/get-lit/no-cover_atepnu.png" },
+        default: "" 
+    },
     year: {
-        type: Number },
-    description: { 
-            type: String },
+        type: Number 
+    },
+    description: {
+        type: String,
+    },    
     categories: { 
-        type: String },
-    // reviews: { 
-    //     type: mongoose.Schema.Types.ObjectId, 
-    //     ref: "Comment" },
-},
-  
-{ timestamps: true, 
-    toJSON: { 
-        virtuals: true } }
-);
+        type: String 
+    },
+    reviews: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Comment" 
+    },
+    },
+    { timestamps: true, 
+        toJSON: { 
+            virtuals: true } 
+    }); 
 
-const Comic = mongoose.model('Book', bookSchema);
 
-module.exports = Book;
+
+const Comic = mongoose.model('Comic', ComicSchema);
+
+module.exports = Comics;
