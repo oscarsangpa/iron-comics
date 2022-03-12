@@ -13,6 +13,9 @@ const ComicSchema = new mongoose.Schema({
       type: String,
       default: "",
     },
+    year: {
+      type: Number
+    },
     categories: { 
       type: String 
     },
